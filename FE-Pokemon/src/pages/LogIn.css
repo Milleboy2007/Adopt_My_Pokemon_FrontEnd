@@ -1,0 +1,7 @@
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;   /* centers left–right */
+    align-items: center;       /* centers top–bottom */
+    padding: 20px 0;
+}
