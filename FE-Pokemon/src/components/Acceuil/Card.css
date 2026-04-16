@@ -1,0 +1,31 @@
+.card {
+  width: 250px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px gray;
+}
+
+.card h2 {
+  color: darkblue;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: black;
+  margin-bottom: 15px;
+}
+
+.card button {
+  background-color: darkgoldenrod;
+  color: darkblue;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.card button:hover {
+  background-color: gold;
+}
