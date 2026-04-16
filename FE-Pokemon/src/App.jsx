@@ -5,10 +5,12 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import LogIn from './pages/LogIn'
 import SignIn from './pages/SignIn'
+import Accueil from './pages/Accueil'
 
 function App() {
   return (
     <>
+      {<Accueil/>}
       {/* <LogIn/> */}
       {/* <SignIn/> */}
     </>
