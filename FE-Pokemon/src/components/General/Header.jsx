@@ -1,6 +1,7 @@
 import "./Header.css"
-import { Link } from "react-router-dom";
-function Header(){
+import { Form, Link } from "react-router-dom";
+function Header({user}){
+
     return (
         <nav className="navbar1">
         <ul>
@@ -14,17 +15,18 @@ function Header(){
                 <Link to="/catalogue">Voir le catalogue</Link>
             </li>
             <li>
-                <Link to="/signin">Signin</Link>
+                <Link to={user ? "/host" : "/login"}>{user ? user.name : "Login"}</Link>
             </li>
             <li>
-                <Link to="/login">Login</Link>
+                <Link to="/user">{user}</Link>
             </li>
-            <li>
-                <Link to="/myPokemons">My pokemons</Link>
-            </li>
-            <li>
-                <Link to="/compte">My Profile</Link>
-            </li>
+            {
+                user &&
+                <Form method="POST" action="/logout">
+                <button>Logout</button>
+                </Form>
+            }
+            
             
         </ul>
         </nav>
