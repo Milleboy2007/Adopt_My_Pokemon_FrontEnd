@@ -6,8 +6,6 @@ import Card from "../components/Acceuil/Card";
 function Accueil({ setPage }) {
   return (
     <div className="accueil-page">
-      <Header />
-
       <div className="accueil-content">
         <div className="text">
           <h1>Adoptez votre Pokemon</h1>
@@ -19,26 +17,24 @@ function Accueil({ setPage }) {
             title="Catalogue"
             description="Voir les pokemon disponibles"
             buttonText="Voir"
-            onClick={() => setPage("catalogue")}
+            link="/catalogue"
           />
 
           <Card
             title="Quiz"
             description="Trouve ton pokemon ideal"
             buttonText="Commencer"
-            onClick={() => setPage("quiz")}
+            link="/quiz"
           />
 
           <Card
             title="Compte"
             description="Voir ton profil"
             buttonText="Voir"
-            onClick={() => setPage("compte")}
+            link="/compte"
           />
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
