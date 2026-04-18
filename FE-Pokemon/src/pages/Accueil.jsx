@@ -1,7 +1,7 @@
 import "./accueil.css";
 import Header from "../components/General/Header";
 import Footer from "../components/General/Footer";
-import Card from "../components/Acceuil/Card";
+import Card from "../components/General/Acceuil/Card";
 
 function Accueil({ setPage }) {
   return (
