@@ -16,7 +16,8 @@ import logoutAction from './actions/logout.action';
 import mainLayoutLoader from './loaders/main-layout.loader';
 import compteLoader from './loaders/compte.loader';
 import authLoader from './loaders/auth.loader';
-
+import QuizDetail from "./pages/QuizDetail"
+import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
 
 function App() {
 
@@ -28,16 +29,17 @@ function App() {
         <Route path="logout" action={logoutAction}/>
         <Route path="signin" element={<SignIn/>}/>
         <Route path="catalogue" element={<Catalogue/>} loader={pokemonsLoader}/>
-        <Route path="quiz" elements={<Quiz/>}/>
 
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
+          <Route path="quiz/*" element={<Quiz />} loader={async () => await requireAuth(), quizzesLoader} />
+          <Route path="quiz/:id" element={<QuizDetail />} loader={quizLoader} />
         </Route>
       </Route>
   ))
 
   return <RouterProvider router={router}/>
 }
-
-export default App
+  
+export default function App()
