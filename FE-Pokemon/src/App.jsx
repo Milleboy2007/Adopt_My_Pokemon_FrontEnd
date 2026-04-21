@@ -14,6 +14,8 @@ import loginAction from './actions/login.action';
 import loginLoader from './loaders/login.loader';
 import logoutAction from './actions/logout.action';
 import mainLayoutLoader from './loaders/main-layout.loader';
+import compteLoader from './loaders/compte.loader';
+import authLoader from './loaders/auth.loader';
 
 
 function App() {
@@ -29,8 +31,8 @@ function App() {
         <Route path="quiz" elements={<Quiz/>}/>
 
         <Route path="/user" element={<ProfileLayout/>}>
-          <Route index element={<Compte/>}/>
-          <Route path="myPokemons" element={<MyPokemon/>}/>
+          <Route index element={<Compte/>} loader={compteLoader}/>
+          <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
         </Route>
       </Route>
   ))
