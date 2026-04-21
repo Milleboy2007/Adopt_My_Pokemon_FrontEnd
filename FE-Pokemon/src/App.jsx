@@ -14,12 +14,12 @@ import loginAction from './actions/login.action';
 import loginLoader from './loaders/login.loader';
 import logoutAction from './actions/logout.action';
 import mainLayoutLoader from './loaders/main-layout.loader';
+
+
 function App() {
 
-  const user = "kyra"
-
   const router = createBrowserRouter(createRoutesFromElements(
-      <Route path="/" element={<MainLayout user={user} loader={mainLayoutLoader}/>}>
+      <Route path="/" element={<MainLayout/>} loader={mainLayoutLoader}>
 
         <Route index element={<Accueil/>}/>
         <Route path="login" element={<LogIn/>} action={loginAction} loader={loginLoader}/>
@@ -28,7 +28,7 @@ function App() {
         <Route path="catalogue" element={<Catalogue/>} loader={pokemonsLoader}/>
         <Route path="quiz" elements={<Quiz/>}/>
 
-        <Route path="user/" element={<ProfileLayout/>}>
+        <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>}/>
           <Route path="myPokemons" element={<MyPokemon/>}/>
         </Route>

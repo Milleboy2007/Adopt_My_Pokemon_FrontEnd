@@ -5,7 +5,7 @@ import './MainLayout.css'
 
 function MainLayout(){
 
-    const user = useLoaderData()
+    const {user} = useLoaderData()
 
     return(
         <div>
@@ -16,4 +16,6 @@ function MainLayout(){
             <Footer/>
         </div>
         )
-} export default MainLayout
+} 
+
+export default MainLayout
