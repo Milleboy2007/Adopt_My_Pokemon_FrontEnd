@@ -1,8 +1,8 @@
 import { getQuiz } from "../services/api"
-import { requireAuth } from "../services/auth"
+import { requiredAuth } from "../services/auth"
 
 export async function quizLoader({ params }) {
-  await requireAuth()
+  await requiredAuth()
 
   const data = await getQuiz(params.id)
   
@@ -10,7 +10,8 @@ export async function quizLoader({ params }) {
 }
 
 export async function quizzesLoader() {
-  await requireAuth()
+  await requiredAuth()
+
   const quizzes = await getQuizzes()
   return { quizzes }
 }

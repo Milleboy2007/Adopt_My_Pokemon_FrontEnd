@@ -19,7 +19,7 @@ import authLoader from './loaders/auth.loader';
 import QuizDetail from "./pages/QuizDetail"
 import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
 
-function App() {
+export default function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
       <Route path="/" element={<MainLayout/>} loader={mainLayoutLoader}>
@@ -33,7 +33,7 @@ function App() {
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
-          <Route path="quiz/*" element={<Quiz />} loader={async () => await requireAuth(), quizzesLoader} />
+          <Route path="quiz/*" element={<Quiz />} loader={quizzesLoader} />
           <Route path="quiz/:id" element={<QuizDetail />} loader={quizLoader} />
         </Route>
       </Route>
@@ -41,5 +41,3 @@ function App() {
 
   return <RouterProvider router={router}/>
 }
-  
-export default function App()
