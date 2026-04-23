@@ -1,4 +1,5 @@
 import "./LogInForms.css"
+import {Form, Link, useActionData} from 'react-router-dom'
 
 function LogInForms(){
 
@@ -9,7 +10,9 @@ function LogInForms(){
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form
+            method="POST"
+        >
             <h1>Log into your account🧢⚡️</h1>
             <label >
                 Email
@@ -17,10 +20,12 @@ function LogInForms(){
             </label>
             <label>
                 Password
-                <input type="password"  id="pass" placeholder="Password"/>
+                <input type="password"  id="password" placeholder="Password"/>
             </label>
-            <button type="submit">Submit</button>
-            <a href="http://google.com" target="_blank">Don't have an account? Sign in</a>
-        </form>
+            <button onClick={useActionData()}>Log in</button>
+            <p>
+                Don't have an account? <Link to="/signin">Create one</Link>
+            </p>
+        </Form>
     )
 } export default LogInForms
