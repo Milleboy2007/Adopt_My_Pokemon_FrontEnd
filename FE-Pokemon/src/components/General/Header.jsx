@@ -1,19 +1,25 @@
 import "./Header.css"
 import { Form, Link } from "react-router-dom";
+import pokeball from '../../assets/pokeball.png'
 function Header({user}){
 
     return (
         <nav className="navbar1">
+            <p>
+                <img src={pokeball} alt="AdoptLogo"/>
+                Poké Adopt
+            </p>
         <ul>
             <li>
                 <Link to="/">Accueil</Link>
             </li>
             <li>
-                <Link to="/quiz">Do a quiz</Link>
+                <Link to="/catalogue">Catalogue</Link>
             </li>
             <li>
-                <Link to="/catalogue">Voir le catalogue</Link>
+                <Link to="/quiz">Quiz</Link>
             </li>
+            
             <li>
                 <Link to={user ? "/host" : "/login"}>{user ? user.name : "Login"}</Link>
             </li>
