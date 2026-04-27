@@ -18,6 +18,10 @@ import compteLoader from './loaders/compte.loader';
 import authLoader from './loaders/auth.loader';
 import QuizDetail from "./pages/QuizDetail"
 import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
+import AboutUs from './pages/AboutUs';
+import OurTeam from './pages/OurTeam';
+import FAQ from './pages/FAQ';
+import SatisfactionForm from './pages/satisfactionForm';
 
 export default function App() {
 
@@ -29,6 +33,10 @@ export default function App() {
         <Route path="logout" action={logoutAction}/>
         <Route path="signin" element={<SignIn/>}/>
         <Route path="catalogue" element={<Catalogue/>} loader={pokemonsLoader}/>
+        <Route path="mission" element={<AboutUs/>}/>
+        <Route path="equipe" element={<OurTeam/>}/>
+        <Route path="FAQ" element={<FAQ/>}/>
+        <Route path="satisf" element={<SatisfactionForm/>}/>
 
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>

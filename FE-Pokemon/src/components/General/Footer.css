@@ -1,74 +1,75 @@
 .footer {
-background-color: #1a53ff; 
-background: linear-gradient(180deg, #1a53ff 0%, #0e2a80 100%); 
-color: white;
-padding: 40px 10% 20px 10%;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a53ff;
+  background: linear-gradient(180deg, #1a53ff 0%, #0e2a80 100%);
+  color: white;
+  padding: 40px 10% 20px 10%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-border-top: 5px solid #ffffff; 
-box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
+  border-top: 5px solid #ffffff;
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
 
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .links {
-display: flex;
-justify-content: space-around;
-width: 100%;
-max-width: 800px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
 }
 
 .links h2 {
-font-size: 1.2rem;
-margin-bottom: 15px;
-text-transform: uppercase;
-letter-spacing: 1px;
-color: #ffcb05;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffcb05;
 }
 
-.links p {
-margin: 8px 0;
-font-size: 0.9rem;
-opacity: 0.8;
-cursor: pointer;
-transition: opacity 0.3s, color 0.3s;
+/* UPDATED: Link styling */
+.links a {
+  display: block;
+  margin: 8px 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s, color 0.3s;
 }
 
-.links p:hover {
-opacity: 1;
-color: #ffcb05; 
+.links a:hover {
+  opacity: 1;
+  color: #ffcb05;
 }
 
 .socials {
-display: flex;
-gap: 25px;
-padding-top: 20px;
-border-top: 1px solid rgba(255, 255, 255, 0.2);
-width: 100%;
-justify-content: center;
+  display: flex;
+  gap: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  justify-content: center;
 }
 
 .socials img {
-width: 32px;
-height: 32px;
-transition: transform 0.3s ease, filter 0.3s ease;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .socials a:hover img {
-transform: translateY(-5px) scale(1.1);
-filter: drop-shadow(0 0 8px rgba(255, 203, 5, 0.8));
+  transform: translateY(-5px) scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 203, 5, 0.8));
 }
 
 @media (max-width: 600px) {
-.links {
-flex-direction: column;
-text-align: center;
-gap: 20px;
+  .links {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
 }
-}
-
-
-
