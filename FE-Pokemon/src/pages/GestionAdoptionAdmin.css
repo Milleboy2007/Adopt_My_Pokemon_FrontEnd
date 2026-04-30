@@ -1,0 +1,188 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: whitesmoke;
+}
+
+.page main {
+  flex: 1;
+  padding: 24px 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar select {
+  padding: 7px 12px;
+  border: 2px solid royalblue;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toolbar span {
+  font-size: 0.85rem;
+  color: dimgray;
+}
+
+.list-title {
+  background: royalblue;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.empty {
+  text-align: center;
+  color: darkgray;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.card {
+  background: white;
+  border: 2px solid gainsboro;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: royalblue;
+}
+
+.card--active {
+  border-color: gold;
+}
+
+.card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+
+.card__id {
+  background: royalblue;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.78rem;
+  font-weight: bold;
+}
+
+.card__name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.card__body {
+  padding: 8px 14px 12px;
+  border-top: 1px solid whitesmoke;
+  font-size: 0.83rem;
+}
+
+.card__body p {
+  margin: 3px 0;
+}
+
+.detail {
+  width: 255px;
+  background: lightgray;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 400px;
+  position: sticky;
+  top: 20px;
+}
+
+.detail__row {
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+}
+
+.ta {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  min-height: 55px;
+  background: white;
+  resize: vertical;
+}
+
+.ta:disabled {
+  background: whitesmoke;
+  color: darkgray;
+}
+
+/* Boutons d'action */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.btn {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn--green {
+  background: green;
+  color: white;
+}
+
+.btn--red {
+  background: crimson;
+  color: white;
+}
+
+.muted {
+  color: darkgray;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 40px;
+}
