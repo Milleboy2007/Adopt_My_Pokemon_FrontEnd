@@ -6,11 +6,9 @@ import "./SignIn.css"
 function SignIn(){
     return (
         <>
-            <Header/>
             <main>
                 <SignInForms/>
             </main>
-            <Footer/>
         </>
     )
 } export default SignIn

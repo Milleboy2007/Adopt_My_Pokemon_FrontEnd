@@ -6,11 +6,9 @@ import "./LogIn.css"
 function LogIn(){
     return (
         <>
-            <Header/>
             <main>
                 <LogInForms/>
             </main>
-            <Footer/>
         </>
     )
 } export default LogIn

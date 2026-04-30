@@ -1,10 +1,11 @@
 import './compte.css'
 
-function Compte() {
+function Compte(){
   return (
     <>
+    <p>
+      my account
+    </p>
     </>
   )
-}
-
-export default Compte
+} export default Compte

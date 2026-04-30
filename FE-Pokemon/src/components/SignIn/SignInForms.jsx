@@ -1,4 +1,5 @@
 import "./SignInForms.css"
+import {Link} from 'react-router-dom'
 
 function SignInForms(){
 
@@ -20,7 +21,9 @@ function SignInForms(){
                 <input type="password"  id="pass" placeholder="Password"/>
             </label>
             <button type="submit">Submit</button>
-            <a href="http://google.com" target="_blank">Already have an account? Log In</a>
+            <p>
+                Already have an account? <Link to="/login">Log in</Link>
+            </p>
         </form>
     )
 } export default SignInForms

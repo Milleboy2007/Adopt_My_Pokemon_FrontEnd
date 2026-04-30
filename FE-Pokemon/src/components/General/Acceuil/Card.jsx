@@ -1,6 +1,7 @@
 import "./Card.css";
+import { Link } from "react-router-dom";
 
-function Card({ title, description, image, onClick, buttonText }) {
+function Card({ title, description, image, link, buttonText }) {
   return (
     <div className="card">
       {image && <img src={image} alt={title} />}
@@ -9,9 +10,11 @@ function Card({ title, description, image, onClick, buttonText }) {
       <p>{description}</p>
 
       {buttonText && (
-        <button onClick={onClick}>
-          {buttonText}
-        </button>
+        <Link to={link}>
+          <button>
+            {buttonText}
+          </button>
+        </Link>
       )}
     </div>
   );
