@@ -6,7 +6,7 @@
 
 .accueil-content {
   flex: 1;
-  background: url("../img/PokemonBG.png");
+  background: url("../assets/PokemonBG.png");
   background-size: cover;
   background-position: center;
   display: flex;
