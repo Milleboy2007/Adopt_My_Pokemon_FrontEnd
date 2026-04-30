@@ -1,4 +1,4 @@
-import { getQuiz } from "../services/api"
+import { getQuizzes, getQuiz } from "../services/api"
 import { requiredAuth } from "../services/auth"
 
 export async function quizLoader({ params }) {

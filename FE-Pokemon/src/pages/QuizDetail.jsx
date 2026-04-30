@@ -1,3 +1,6 @@
+import { useLoaderData } from "react-router-dom"
+import { useState } from "react"
+
 export default function QuizDetail() {
     const { quiz, questions } = useLoaderData()
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -13,7 +16,7 @@ export default function QuizDetail() {
         } else {
             setShowResult(true)
         }
-    } // <- ferme answerQuestion ici
+    } 
 
     if (showResult) return (
         <div>

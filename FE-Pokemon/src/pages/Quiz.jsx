@@ -1,4 +1,5 @@
 import './quiz.css'
+import { useLoaderData, Link } from 'react-router-dom'
 
 export default function Quiz() {
   const { quizzes } = useLoaderData()
@@ -12,8 +13,8 @@ export default function Quiz() {
           <div key={quiz.id} className="quiz-item">
             <h2>{quiz.titre}</h2>
             <p>Difficulté : {quiz.difficulte}</p>
-            <p>Questions : {quiz.nombreQuestions}</p>
-            <p>Récompense : {quiz.recompenseCrédits} crédits</p>
+            <p>Questions : {quiz.nombreDeQuestions}</p>
+            <p>Récompense : {quiz.recompenseCredits} crédits</p>
             <Link to={`/quiz/${quiz.id}`} className="start-quiz-button">Commencer</Link>
           </div>
         ))}
