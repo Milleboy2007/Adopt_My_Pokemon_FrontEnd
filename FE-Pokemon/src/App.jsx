@@ -38,10 +38,12 @@ export default function App() {
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>}/>
 
+
+
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
-          <Route path="quiz/*" element={<Quiz />} loader={quizzesLoader} />
+          <Route path="quiz" element={<Quiz />} loader={quizzesLoader} />
           <Route path="quiz/:id" element={<QuizDetail />} loader={quizLoader} />
         </Route>
       </Route>
