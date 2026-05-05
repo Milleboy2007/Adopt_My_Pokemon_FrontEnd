@@ -22,14 +22,14 @@ function Accueil({ setPage }) {
 
           <Card
             title="Quiz"
-            description="Trouve ton pokemon ideal"
+            description="Trouver son pokemon idéal"
             buttonText="Commencer"
             link="/user/quiz"
           />
 
           <Card
             title="Compte"
-            description="Voir ton profil"
+            description="Consulter le profil"
             buttonText="Voir"
             link="/compte"
           />
