@@ -4,7 +4,7 @@ import { createFormulaire, createAdoption } from "../services/api";
 import "./FormulaireAdoption.css";
 
 function FormulaireAdoption() {
-  const { pokemon } = useLoaderData()
+  const pokemon = useLoaderData()
   const navigate = useNavigate()
 
   const [nomComplet, setNomComplet] = useState("")
