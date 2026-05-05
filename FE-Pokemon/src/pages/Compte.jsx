@@ -3,7 +3,7 @@ import './compte.css'
 function Compte(){
   return (
     <>
-    <p>
+    <p className='compte-page'>
       my account
     </p>
     </>
