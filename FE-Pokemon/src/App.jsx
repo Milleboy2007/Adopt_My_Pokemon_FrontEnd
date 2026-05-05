@@ -42,7 +42,7 @@ export default function App() {
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
         <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
         <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
-        <Route path="adoption/:pokemon" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
+        <Route path="adoption/:id" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
 
         
 

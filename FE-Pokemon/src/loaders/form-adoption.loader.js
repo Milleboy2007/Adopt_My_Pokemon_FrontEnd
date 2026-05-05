@@ -1,6 +1,8 @@
+import { getSinglePokemon } from "../services/api";
 import { requiredAuth } from "../services/auth";
 
 export async function formAdoptionLoader({params}) {
     await requiredAuth();
-    return {pokemon: params}
+    const pokemon = await getSinglePokemon(params.id);
+    return pokemon;
 }
