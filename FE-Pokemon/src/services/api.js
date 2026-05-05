@@ -35,6 +35,34 @@ export const getSingleHostPokemon = async (userId, vanId) => await request(`/use
 export const getQuiz = async (id) => await request(`/quiz/${id}`)
 export const getQuizzes = async () => await request("/quiz")
 
+// Requêtes GET Adoption
+export const getPendingAdoptions = async () => await request("/adoptions/pending")
+export const getApprovedAdoptions = async () => await request("/adoptions/approve")
+export const getRejectedAdoptions = async () => await request("/adoptions/reject")
+
+// PUT avec id - pas de besoin de rejection reason pour approve
+export const approveAdoption = async (id) => await request(`/adoptions/${id}/approve`, {
+    method: "PUT"
+})
+
+//PUT avec id + rejection reason
+export const rejectAdoption = async (id, reason) => await request(`/adoptions/${id}/reject`, {
+    method: "PUT",
+    body: JSON.stringify({ reason })
+})
+
+// POST tout le formulaire dans body
+export const createFormulaire = async (data) => await request("/forms/create", {
+    method: "POST",
+    body: JSON.stringify(data)
+})
+
+//POST adoption avec pokemonId + formulaireId dans body
+export const createAdoption = async (data) => await request("/adoptions/create", {
+    method: "POST",
+    body: JSON.stringify(data)
+})
+
 // Requêtes AUTH
 export const loginUser = async (creds) => (
   await request("/auth/signin", {

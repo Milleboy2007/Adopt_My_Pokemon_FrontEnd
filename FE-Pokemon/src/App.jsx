@@ -22,6 +22,9 @@ import AboutUs from './pages/AboutUs';
 import OurTeam from './pages/OurTeam';
 import FAQ from './pages/FAQ';
 import SatisfactionForm from './pages/satisfactionForm';
+import FormulaireAdoption from './pages/FormulaireAdoption';
+import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
+import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
 
 export default function App() {
 
@@ -37,6 +40,7 @@ export default function App() {
         <Route path="equipe" element={<OurTeam/>}/>
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>}/>
+        <Route path="admin/adoptions" element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
 
 
 

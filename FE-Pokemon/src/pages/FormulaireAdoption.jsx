@@ -1,28 +1,56 @@
 import { useState } from "react";
-import Header from "../components/General/Header";
-import Footer from "../components/General/Footer";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { createFormulaire, createAdoption } from "../services/api";
 import "./FormulaireAdoption.css";
 
-function FormulaireAdoption({ pokemon }) {
-  const [nomComplet, setNomComplet] = useState("");
-  const [age, setAge] = useState(18);
-  const [typeLogement, setTypeLogement] = useState("");
-  const [motivationAdoption, setMotivationAdoption] = useState("");
-  const [tempsDisponibleParJour, setTempsDisponibleParJour] = useState("");
-  const [engagementLongTerme, setEngagementLongTerme] = useState("");
-  const [aDejaEuPokemon, setADejaEuPokemon] = useState("");
-  const [autresAnimauxMaison, setAutresAnimauxMaison] = useState("");
-  const [gestionAdaptationPokemon, setGestionAdaptationPokemon] = useState("");
+function FormulaireAdoption() {
+  const { pokemon } = useLoaderData()
+  const navigate = useNavigate()
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    //connecter au backend
-    alert("Demande envoyée avec succès !");
-  }
+  const [nomComplet, setNomComplet] = useState("")
+  const [age, setAge] = useState(18)
+  const [typeLogement, setTypeLogement] = useState("")
+  const [motivationAdoption, setMotivationAdoption] = useState("")
+  const [tempsDisponibleParJour, setTempsDisponibleParJour] = useState("")
+  const [engagementLongTerme, setEngagementLongTerme] = useState("")
+  const [aDejaEuPokemon, setADejaEuPokemon] = useState("")
+  const [autresAnimauxMaison, setAutresAnimauxMaison] = useState("")
+  const [gestionAdaptationPokemon, setGestionAdaptationPokemon] = useState("")
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    try {
+        // etape1: creer le formulaire
+        const formulaire = await createFormulaire({
+            nomComplet,
+            age: parseInt(age),
+            typeLogement,
+            motivationAdoption,
+            tempsDisponibleParJour,
+            engagementLongTerme,
+            aDejaEuPokemon: aDejaEuPokemon === "Oui",
+            autresAnimauxMaison,
+            gestionAdaptationPokemon,
+            typePokemonSouhaite: pokemon.type
+        })
+
+        // etape2: creer adoption
+        await createAdoption({
+            pokemonId: pokemon.id,
+            formulaireId: formulaire.id
+        })
+
+        // etaep3: rediriger apre succes 
+        navigate("/")
+
+    } catch(error) {
+        alert("Erreur lors de l'envoi de la demande")
+    }
+}
 
   return (
     <div className="page">
-      <Header />
       <main>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form__grid">
@@ -146,7 +174,6 @@ function FormulaireAdoption({ pokemon }) {
           </div>
         </form>
       </main>
-      <Footer />
     </div>
   );
 }
