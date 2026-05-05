@@ -25,6 +25,9 @@ import SatisfactionForm from './pages/satisfactionForm';
 import signinAction from './actions/signin.action';
 import FormulaireAdoption from './pages/FormulaireAdoption';
 import { formAdoptionLoader } from './loaders/form-adoption.loader';
+import FormulaireAdoption from './pages/FormulaireAdoption';
+import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
+import { gestionAdoptionLoader } from './loaders/gestion-adoption.loader';
 
 export default function App() {
 
@@ -41,6 +44,7 @@ export default function App() {
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
         <Route path="adoption/:id" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
+        <Route path="admin/adoptions" element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
 
         
 
