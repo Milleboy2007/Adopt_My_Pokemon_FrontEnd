@@ -24,7 +24,7 @@ function Accueil({ setPage }) {
             title="Quiz"
             description="Trouve ton pokemon ideal"
             buttonText="Commencer"
-            link="/quiz"
+            link="/user/quiz"
           />
 
           <Card
