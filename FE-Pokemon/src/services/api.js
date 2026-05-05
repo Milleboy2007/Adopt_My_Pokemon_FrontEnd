@@ -37,8 +37,8 @@ export const getQuizzes = async () => await request(`/quiz`)
 
 
 
-
-// Requêtes AUTH
+// Requêtes POST
+// -------------- Requêtes AUTH -----------------
 export const loginUser = async (creds) => (
   await request("/auth/signin", {
     method: "POST",
@@ -62,7 +62,7 @@ export const logoutUser = async () => {
   })
 }
 
-// Requêtes POST
+// ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons", {
     method: "POST",
