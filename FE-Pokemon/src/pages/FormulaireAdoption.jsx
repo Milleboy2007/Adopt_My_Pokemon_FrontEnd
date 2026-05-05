@@ -68,7 +68,7 @@ function FormulaireAdoption() {
 
               <div className="row">
                 <div className="field">
-                  <label>Age:</label>
+                  <label>Âge:</label>
                   <input
                     type="number"
                     min="18"
@@ -79,7 +79,7 @@ function FormulaireAdoption() {
                 </div>
 
                 <div className="field">
-                  <label>Type Logement:</label>
+                  <label>Type de logement:</label>
                   <select value={typeLogement} onChange={(e) => setTypeLogement(e.target.value)} required>
                     <option value="">▼</option>
                     <option>2 1/2</option>
@@ -90,7 +90,7 @@ function FormulaireAdoption() {
                 </div>
 
                 <div className="field">
-                  <label>Motivation Adoption:</label>
+                  <label>Motivation d'adoption:</label>
                   <select value={motivationAdoption} onChange={(e) => setMotivationAdoption(e.target.value)} required>
                     <option value="">▼</option>
                     <option>Bonne</option>
@@ -100,7 +100,7 @@ function FormulaireAdoption() {
                 </div>
 
                 <div className="field">
-                  <label>Temps dispo:</label>
+                  <label>Temps disponible:</label>
                   <select value={tempsDisponibleParJour} onChange={(e) => setTempsDisponibleParJour(e.target.value)} required>
                     <option value="">▼</option>
                     <option>0</option>
@@ -111,7 +111,7 @@ function FormulaireAdoption() {
                 </div>
 
                 <div className="field">
-                  <label>Engagement long terme:</label>
+                  <label>Engagement à long terme:</label>
                   <select value={engagementLongTerme} onChange={(e) => setEngagementLongTerme(e.target.value)} required>
                     <option value="">▼</option>
                     <option>Oui</option>
@@ -121,7 +121,7 @@ function FormulaireAdoption() {
               </div>
 
               <div className="field">
-                <label>Déjà possédé un Pokémon:</label>
+                <label>Avez-vous déjà possédé un Pokémon:</label>
                 <select value={aDejaEuPokemon} onChange={(e) => setADejaEuPokemon(e.target.value)} required>
                   <option value="">▼</option>
                   <option>Oui</option>
@@ -130,7 +130,7 @@ function FormulaireAdoption() {
               </div>
 
               <div className="field">
-                <label>Gestion et Adaptation:</label>
+                <label>Gestion et adaptation:</label>
                 <textarea
                   rows={4}
                   value={gestionAdaptationPokemon}
@@ -142,10 +142,10 @@ function FormulaireAdoption() {
 
             <div className="form__right">
               <div className="chosen">
-                <strong>Tu a Choisi:</strong>
+                <strong>Vous avez choisi:</strong>
                 {pokemon ? (
                   <>
-                    <span className="tag">{pokemon.nom}</span>
+                    <span className="tag">{pokemon.nom.charAt(0).toUpperCase() + pokemon.nom.slice(1)}</span>
                     <div className="img-box">
                       {pokemon.img ? <img src={pokemon.img} alt={pokemon.nom} /> : "IMAGE"}
                     </div>

@@ -1,15 +1,12 @@
+import { redirect } from "react-router-dom"; 
 import { logoutUser } from "../services/api";
-
-
-
 
 export default async function logoutAction() {
     try{
         await logoutUser()
-        redirect("/")
+        return redirect("/") 
     } catch(error){
         console.error(error)
-        redirect("/")
+        return redirect("/") 
     }
-    
 }

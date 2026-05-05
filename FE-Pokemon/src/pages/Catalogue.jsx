@@ -1,15 +1,16 @@
 import { useLoaderData } from 'react-router-dom'
 import './catalogue.css'
-import pokemonsLoader from '../loaders/pokemons.loader'
+import Card from '../components/catalogue/Card'
+import CardList from '../components/catalogue/CardList'
 
 function Catalogue() {
   const pokemons = useLoaderData()
 
   return (
     <>
-    <p>
-      Catalogue
-    </p>
+      <ul className='card-list'>
+        <CardList cards={pokemons}/>
+      </ul>
     </>
   )
 }

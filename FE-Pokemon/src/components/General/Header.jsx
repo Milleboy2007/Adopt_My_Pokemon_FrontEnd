@@ -16,15 +16,9 @@ function Header({user}){
             <li>
                 <Link to="/catalogue">Catalogue</Link>
             </li>
-            <li>
-                <Link to="/quiz">Quiz</Link>
-            </li>
             
             <li>
-                <Link to={user ? "/host" : "/login"}>{user ? user.name : "Login"}</Link>
-            </li>
-            <li>
-                <Link to="/user">{user}</Link>
+                <Link to={user ? "/user" : "/login"}>{user ? user.email : "Login"}</Link>
             </li>
             {
                 user &&
