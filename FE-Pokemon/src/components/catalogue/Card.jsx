@@ -5,9 +5,11 @@ function Card({props}) {
   return (
     <>
         <li className='PokeCard' key={props.id}>
+          <Link to={`/catalogue/${props.id}`} className='card-link'> 
             <img className='card-image' src={props.img} alt={props.nom}/>
             <p>{props.nom.charAt(0).toUpperCase() + props.nom.slice(1)}</p>
             {/*<button onClick={() => console.log("Click on", props.nom)}>Adopté</button>*/}
+            </Link>
             <Link to={`/adoption/${props.id}`}>Adopté</Link>
         </li>
     </>

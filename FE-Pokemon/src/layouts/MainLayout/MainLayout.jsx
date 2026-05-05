@@ -8,7 +8,7 @@ function MainLayout(){
     const {user} = useLoaderData()
 
     return(
-        <div>
+        <div className='main-layout'>
             <Header user={user}/>
             <main>
                 <Outlet context={{user}}/>
