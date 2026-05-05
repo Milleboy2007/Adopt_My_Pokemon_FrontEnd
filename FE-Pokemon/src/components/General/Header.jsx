@@ -21,7 +21,7 @@ function Header({user}){
             </li>
             
             <li>
-                <Link to={user ? "/host" : "/login"}>{user ? user.email : "Login"}</Link>
+                <Link to={user ? "/user" : "/login"}>{user ? user.email : "Login"}</Link>
             </li>
             {
                 user &&
