@@ -23,6 +23,8 @@ import OurTeam from './pages/OurTeam';
 import FAQ from './pages/FAQ';
 import SatisfactionForm from './pages/satisfactionForm';
 import signinAction from './actions/signin.action';
+import FormulaireAdoption from './pages/FormulaireAdoption';
+import { formAdoptionLoader } from './loaders/form-adoption.loader';
 
 export default function App() {
 
@@ -40,6 +42,8 @@ export default function App() {
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
         <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
         <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
+        <Route path="adoption/:pokemon" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
+
         
 
 

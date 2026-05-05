@@ -2,8 +2,10 @@ import { useState } from "react";
 import Header from "../components/General/Header";
 import Footer from "../components/General/Footer";
 import "./FormulaireAdoption.css";
+import { useLoaderData } from "react-router-dom";
 
-function FormulaireAdoption({ pokemon }) {
+function FormulaireAdoption() {
+  const pokemon = useLoaderData()
   const [nomComplet, setNomComplet] = useState("");
   const [age, setAge] = useState(18);
   const [typeLogement, setTypeLogement] = useState("");
