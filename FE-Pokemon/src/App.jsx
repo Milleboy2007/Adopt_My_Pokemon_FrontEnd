@@ -22,6 +22,7 @@ import AboutUs from './pages/AboutUs';
 import OurTeam from './pages/OurTeam';
 import FAQ from './pages/FAQ';
 import SatisfactionForm from './pages/satisfactionForm';
+import signinAction from './actions/signin.action';
 
 export default function App() {
 
@@ -30,8 +31,8 @@ export default function App() {
 
         <Route index element={<Accueil/>}/>
         <Route path="login" element={<LogIn/>} action={loginAction} loader={loginLoader}/>
-        <Route path="logout" action={logoutAction}/>
-        <Route path="signin" element={<SignIn/>}/>
+        <Route path="logout" action={logoutAction} />
+        <Route path="signin" element={<SignIn/>} action={signinAction}/>
         <Route path="catalogue" element={<Catalogue/>} loader={pokemonsLoader}/>
         <Route path="mission" element={<AboutUs/>}/>
         <Route path="equipe" element={<OurTeam/>}/>
