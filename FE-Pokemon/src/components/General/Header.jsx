@@ -16,9 +16,6 @@ function Header({user}){
             <li>
                 <Link to="/catalogue">Catalogue</Link>
             </li>
-            <li>
-                <Link to="/quiz">Quiz</Link>
-            </li>
             
             <li>
                 <Link to={user ? "/user" : "/login"}>{user ? user.email : "Login"}</Link>

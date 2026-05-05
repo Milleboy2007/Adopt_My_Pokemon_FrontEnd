@@ -40,8 +40,6 @@ export default function App() {
         <Route path="equipe" element={<OurTeam/>}/>
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
-        <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
-        <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
         <Route path="adoption/:id" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
 
         
@@ -50,6 +48,8 @@ export default function App() {
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
+          <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
+          <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
         </Route>
       </Route>
   ))

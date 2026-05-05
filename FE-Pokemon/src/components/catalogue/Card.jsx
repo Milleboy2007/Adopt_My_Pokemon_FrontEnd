@@ -2,8 +2,6 @@ import { Link, useLoaderData } from 'react-router-dom'
 import './card.css'
 
 function Card({props}) {
-    console.log(props)
-
   return (
     <>
         <li className='PokeCard' key={props.id}>

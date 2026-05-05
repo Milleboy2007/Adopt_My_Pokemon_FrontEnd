@@ -8,6 +8,9 @@ function HeaderUser(){
                 <Link to="/user">Mon profile</Link>
             </li>
             <li>
+                <Link to="/user/quiz">Quiz</Link>
+            </li>
+            <li>
                 <Link to="/user/myPokemons">My pokemons</Link>
             </li>
             

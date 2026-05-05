@@ -15,7 +15,7 @@ export default function Quiz() {
             <p>Difficulté : {quiz.difficulte}</p>
             <p>Questions : {quiz.nombreDeQuestions}</p>
             <p>Récompense : {quiz.recompenseCredits} crédits</p>
-            <Link to={`/quiz/${quiz.id}`} className="start-quiz-button">Commencer</Link>
+            <Link to={`/user/quiz/${quiz.id}`} className="start-quiz-button">Commencer</Link>
           </div>
         ))}
       </div>
