@@ -6,7 +6,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import Compte from './pages/Compte'
 import Catalogue from './pages/Catalogue'
 import MyPokemon from './pages/MyPokemon'
-import Quiz from './pages/Quiz'
+import Quiz from './components/Quiz/Quiz';
 import MainLayout from './layouts/MainLayout/MainLayout'
 import ProfileLayout from './layouts/ProfileLayout/ProfileLayout'
 import pokemonsLoader from './loaders/pokemons.loader';
@@ -16,7 +16,7 @@ import logoutAction from './actions/logout.action';
 import mainLayoutLoader from './loaders/main-layout.loader';
 import compteLoader from './loaders/compte.loader';
 import authLoader from './loaders/auth.loader';
-import QuizDetail from "./pages/QuizDetail"
+import QuizDetail from './components/Quiz/Details/QuizDetail'
 import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
 import AboutUs from './pages/AboutUs';
 import OurTeam from './pages/OurTeam';
@@ -36,15 +36,15 @@ export default function App() {
         <Route path="mission" element={<AboutUs/>}/>
         <Route path="equipe" element={<OurTeam/>}/>
         <Route path="FAQ" element={<FAQ/>}/>
-        <Route path="satisf" element={<SatisfactionForm/>}/>
-
+        <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
+        <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
+        <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
+        
 
 
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
-          <Route path="quiz" element={<Quiz />} loader={quizzesLoader} />
-          <Route path="quiz/:id" element={<QuizDetail />} loader={quizLoader} />
         </Route>
       </Route>
   ))
