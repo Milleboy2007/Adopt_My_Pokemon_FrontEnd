@@ -27,6 +27,11 @@ import FormulaireAdoption from './pages/FormulaireAdoption';
 import { formAdoptionLoader } from './loaders/form-adoption.loader';
 import ModifPass from './pages/modifPass';
 import modifPassAction from './actions/modifPass.action';
+import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
+import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
+import PokemonDetail from './components/catalogue/details/PokemonDetail';
+import pokeDetailLoader from './loaders/poke-detail.loader';
+
 
 export default function App() {
 
@@ -38,11 +43,13 @@ export default function App() {
         <Route path="logout" action={logoutAction} />
         <Route path="signin" element={<SignIn/>} action={signinAction}/>
         <Route path="catalogue" element={<Catalogue/>} loader={pokemonsLoader}/>
+        <Route path="catalogue/:id" element={<PokemonDetail/>} loader={pokeDetailLoader}/> 
         <Route path="mission" element={<AboutUs/>}/>
         <Route path="equipe" element={<OurTeam/>}/>
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
         <Route path="adoption/:id" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
+        <Route path="admin/adoptions" element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
 
         
 
