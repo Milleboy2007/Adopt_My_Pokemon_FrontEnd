@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL LAYOUT FIX
+========================= */
 
 .app-layout {
     display: flex;
@@ -5,7 +8,6 @@
     min-height: 100vh;
 }
 
-/* Main content grows naturally, no fake empty space */
 .page-content {
     flex: 1;
     padding: 2rem;
@@ -14,6 +16,7 @@
 
 /* =========================
    SECONDARY NAVBAR
+========================= */
 
 .navbar2 {
     background-color: #f5f7ff;
@@ -56,10 +59,11 @@
 
 /* =========================
    ACCOUNT PAGE
+========================= */
 
 .account-page {
     font-family: Arial, sans-serif;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
 .account-page h1 {
@@ -68,24 +72,7 @@
     margin-bottom: 2rem;
 }
 
-.account-card p {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #111;
-
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* space between password and icon */
-}
-
-.account-card img {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-/* Grid layout for stats */
+/* Grid layout */
 .account-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -94,7 +81,7 @@
     margin: 0 auto;
 }
 
-/* Individual cards */
+/* Cards */
 .account-card {
     background: white;
     border-radius: 12px;
@@ -119,9 +106,26 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #111;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-/* Highlighted card (PokeCredits) */
+/* Password pencil icon */
+.account-card img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Optional link alignment fix */
+.account-card a {
+    display: flex;
+    align-items: center;
+}
+
+/* Highlighted card */
 .account-card.highlight {
     background: linear-gradient(135deg, #1a53ff, #4f7bff);
     color: white;
@@ -130,7 +134,4 @@
 .account-card.highlight h3,
 .account-card.highlight p {
     color: white;
-.compte-page {
-    min-height: 60vh;
-    padding: 40px;
 }
