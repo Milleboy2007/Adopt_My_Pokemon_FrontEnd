@@ -82,10 +82,11 @@ function FormulaireAdoption() {
                   <label>Type Logement:</label>
                   <select value={typeLogement} onChange={(e) => setTypeLogement(e.target.value)} required>
                     <option value="">▼</option>
-                    <option>2 1/2</option>
-                    <option>3 1/2</option>
-                    <option>4 1/2</option>
-                    <option>5 1/2</option>
+                    <option>Appartement</option>
+                    <option>Petite Maison</option>
+                    <option>Maison Familiale</option>
+                    <option>Maison avec Grande Cour</option>
+                    <option>Grande Maison avec Très Grande Cour</option>
                   </select>
                 </div>
 
