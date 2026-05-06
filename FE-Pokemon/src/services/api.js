@@ -33,7 +33,7 @@ export const getSinglePokemon = async (id) => await request(`/pokemons/${id}`)
 export const getHostPokemons = async (userId) => await request(`/users/${userId}/pokemons`)
 export const getSingleHostPokemon = async (userId, vanId) => await request(`/users/${userId}/pokemons/${vanId}`)
 export const getQuiz = async (id) => await request(`/quiz/${id}`)
-export const getQuizzes = async () => await request("/quiz")
+export const getQuizzes = async () => await request(`/quiz`)
 
 // Requêtes GET Adoption
 export const getPendingAdoptions = async () => await request("/adoptions/pending")
@@ -87,10 +87,17 @@ export const logoutUser = async () => {
   })
 }
 
-// Requêtes POST
+// ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons", {
     method: "POST",
     body: JSON.stringify(p)
+  })
+}
+
+export async function satisfactionForm(s) {
+  return await request("/satisfaction-form/createFormSatisfaction", {
+    method: "POST",
+    body: JSON.stringify(s)
   })
 }
