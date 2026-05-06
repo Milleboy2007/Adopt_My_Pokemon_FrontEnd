@@ -62,6 +62,13 @@ export const logoutUser = async () => {
   })
 }
 
+export const updateUser = async (id, creds) => {
+  return await request(`/auth/update/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(creds)
+  });
+};
+
 // ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons", {

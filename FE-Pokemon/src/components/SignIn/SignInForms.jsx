@@ -7,18 +7,18 @@ function SignInForms(){
 
     return (
         <Form method="post">
-            <h1>Make a new account🧢⚡️</h1>
+            <h1>Faire un nouveau compte🧢⚡️</h1>
             <label >
-                Email
+                Courriel
                 <input name="email" type="text" id="email" placeholder="ex: bobby@gmail.com"/>
             </label>
             <label>
-                Password
+                Mot de passe
                 <input name="password" type="password"  id="pass" placeholder="Password"/>
             </label>
-            <button type="submit">Submit</button>
+            <button type="submit">Créer</button>
             <p>
-                Already have an account? <Link to="/login">Log in</Link>
+                Vous avez déjà un compte? <Link to="/login">Se connecter</Link>
             </p>
         </Form>
     )

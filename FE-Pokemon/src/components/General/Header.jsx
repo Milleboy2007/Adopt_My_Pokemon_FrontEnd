@@ -18,13 +18,13 @@ function Header({user}){
             </li>
             
             <li>
-                <Link to={user ? "/user" : "/login"}>{user ? "My Account" : "Login"}</Link>
+                <Link to={user ? "/user" : "/login"}>{user ? "Mon compte" : "Se connecter"}</Link>
             </li>
             {
                 user &&
                 <li>
                     <Form method="POST" action="/logout" className="logout">
-                        <button className="logout-btn">Logout</button>
+                        <button className="logout-btn">Se déconnecter</button>
                     </Form>
                 </li>
             }
