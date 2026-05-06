@@ -1,43 +1,43 @@
-
+/* Secondary Navbar Container */
 .navbar2 {
-  display: flex;
-  justify-content: center;
-  padding: 20px 40px;
-  width: 100%;
-  box-sizing: border-box;
-  background: transparent; 
+    background-color: #f5f7ff;
+    border-top: 2px solid #d6dcff;
+    border-bottom: 2px solid #d6dcff;
+    padding: 0.4rem 2rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* List reset */
 .navbar2 ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.navbar2 li a {
-  display: block;
-  padding: 12px 36px; 
-  font-size: 15px;
-  font-weight: 600;
-  color: #666;
-  text-decoration: none;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease;
+/* Links */
+.navbar2 a {
+    text-decoration: none;
+    color: #3a4b8a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
-.navbar2 li a:hover {
-  background: #1a53ff;
-  color: white;
-  box-shadow: 0 4px 16px rgba(26, 83, 255, 0.3);
-  transform: translateY(-2px);
+/* Hover state */
+.navbar2 a:hover {
+    background-color: #e6ebff;
+    color: #1a53ff;
 }
 
-.navbar2 li a.active {
-  background: #1a53ff;
-  color: white;
-  box-shadow: 0 4px 16px rgba(26, 83, 255, 0.3);
+/* Active/selected feeling (optional if you use NavLink later) */
+.navbar2 a.active {
+    background-color: #1a53ff;
+    color: white;
 }

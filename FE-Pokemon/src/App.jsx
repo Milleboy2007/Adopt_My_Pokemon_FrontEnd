@@ -25,6 +25,8 @@ import SatisfactionForm from './pages/satisfactionForm';
 import signinAction from './actions/signin.action';
 import FormulaireAdoption from './pages/FormulaireAdoption';
 import { formAdoptionLoader } from './loaders/form-adoption.loader';
+import ModifPass from './pages/modifPass';
+import modifPassAction from './actions/modifPass.action';
 import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
 import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
 import PokemonDetail from './components/catalogue/details/PokemonDetail';
@@ -55,6 +57,7 @@ export default function App() {
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
           <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
+          <Route path="modifPass" element={<ModifPass/>} action={modifPassAction}/>
           <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
           <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
         </Route>
