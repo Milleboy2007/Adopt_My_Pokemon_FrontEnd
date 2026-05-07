@@ -103,9 +103,9 @@ export async function satisfactionForm(s) {
 }
 
 
-export async function addCredits(userId, quizId) {
-  return await request(`/quiz/addCredits`, {
+export async function addCredits(userId, quizId, credits, difficulte) {
+  return await request(`/quiz/credits/add`, {
     method: "POST",
-    body: JSON.stringify({ userId, quizId })
+    body: JSON.stringify({ userId, quizId, credits, difficulte })
   })
 }
