@@ -1,36 +1,61 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import { useState } from "react"
 import './QuizDetails.css'
+import { getCurrentUser, addCredits } from "../../../services/api"
+
 
 export default function QuizDetail() {
-  const { quiz, questions } = useLoaderData()
+  const { quiz, questions, error } = useLoaderData()
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [showResult, setShowResult] = useState(false)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
 
-  function answerQuestion(answer) {
-    setSelectedAnswer(answer)
+  
+  if(error) return (
+      <div className="quiz-detail-container">
+        <div className="quiz-detail-card" style={{textAlign: 'center'}}>
+          <h2>Reviens Demain</h2>
+          <p>{error}</p>
+          <Link to="/user/quiz" className="back-btn">voir les autres quiz</Link>
+        </div>
+      </div>
+    )
 
-    setTimeout(() => {
-    if (answer === questions[currentQuestionIndex].answer) {
-      setScore(score => score + 1)
-    }
-    if (currentQuestionIndex + 1 < questions.length) {
-      setCurrentQuestionIndex(index => index + 1)
-    } else {
+
+
+async function answerQuestion(answer) {
+  setSelectedAnswer(answer)
+
+  setTimeout(async () => {
+    const isCorrect = answer === questions[currentQuestionIndex].answer
+    const newScore = isCorrect ? score + 1 : score // calcul direct sans state
+
+    if (isCorrect) setScore(newScore)
+
+    const isLastQuestion = currentQuestionIndex + 1 >= questions.length
+
+    if (isLastQuestion) {
+      const user = await getCurrentUser()
+      const creditsEarned = Math.round(newScore * (quiz.recompenseCredits / questions.length))
+      await addCredits(user.id, quiz.id, creditsEarned, quiz.difficulte)
       setShowResult(true)
+    } else {
+      setCurrentQuestionIndex(i => i + 1)
     }
-    setSelectedAnswer(null)
-    }, 1000)
-  }
 
-  if (showResult) return (
+    setSelectedAnswer(null)
+  }, 1000)
+}
+
+  if (showResult) 
+    return (
     <div className="quiz-result">
       <div className="quiz-result-card">
         <h2>Résultat 🎉</h2>
         <p>Score : {score} / {questions.length}</p>
-        <p>Crédits gagnés : {score * (quiz.recompenseCredits / questions.length)}</p>
+        <p>Crédits gagnés : {Math.round(score * (quiz.recompenseCredits / questions.length))}</p>
+        
       </div>
     </div>
   )

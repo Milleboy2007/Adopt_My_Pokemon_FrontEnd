@@ -108,3 +108,11 @@ export async function satisfactionForm(s) {
     body: JSON.stringify(s)
   })
 }
+
+
+export async function addCredits(userId, quizId, credits, difficulte) {
+  return await request(`/quiz/credits/add`, {
+    method: "POST",
+    body: JSON.stringify({ userId, quizId, credits, difficulte })
+  })
+}
