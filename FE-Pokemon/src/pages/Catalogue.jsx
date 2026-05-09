@@ -5,7 +5,8 @@ import CardList from '../components/catalogue/CardList'
 
 function Catalogue() {
   const pokemons = useLoaderData()
-
+  
+    
   return (
     <>
       <ul className='card-list'>
