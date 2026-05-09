@@ -2,6 +2,7 @@
 function Type(props) {
   return (
     <>
+        <legend>Type: </legend>
         <select multiple onChange={t => props.selectTypes(Array.from(t.target.selectedOptions, option => option.value))}>
             <option value="normal">normal</option>
             <option value="fire">fire</option>

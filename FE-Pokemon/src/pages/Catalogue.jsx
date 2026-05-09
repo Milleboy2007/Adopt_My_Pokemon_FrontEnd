@@ -60,6 +60,7 @@ function Catalogue() {
             <option value="alpha">Alphabétique</option>
           </select>
           <div className='filtre'>
+            <p>Filter par:</p>
             <Type selectTypes={t => setType(t)}/>
             <Poids selectPoids={(param, value) => setPoids({"param": param, "value":value})}/>
             <Taille selectTaille={(param, value) => {setTaille({"param": param, "value":value})}}/>
