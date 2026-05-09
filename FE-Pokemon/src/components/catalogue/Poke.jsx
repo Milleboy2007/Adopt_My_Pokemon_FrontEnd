@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from 'react-router-dom'
-import './card.css'
+import './poke.css'
 
 function Card({props}) {
   return (
