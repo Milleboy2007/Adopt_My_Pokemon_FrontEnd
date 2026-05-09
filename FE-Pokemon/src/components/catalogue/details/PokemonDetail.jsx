@@ -5,7 +5,6 @@ import './pokemonDetail.css'
 function PokemonDetail() {
     const  { pokemon } = useLoaderData();
 
-    console.log(pokemon.type, typeof pokemon.type)
     return (
         <div className="detail-page">
           <div className="detail-card">

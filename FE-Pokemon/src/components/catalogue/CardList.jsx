@@ -4,7 +4,7 @@ import Card from './Card'
 
 function CardList(props) {
   const elemsCards = props.cards.map(card => {
-    return <Card props={card}/>
+    if(!card.estAdopte) return <Card props={card}/>
   })
 
   return (
