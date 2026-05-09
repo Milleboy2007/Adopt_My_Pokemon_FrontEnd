@@ -9,7 +9,6 @@ import Prix from '../components/catalogue/filtre/Prix'
 
 function Catalogue() {
   const pokemons = useLoaderData()
-
   const [trie, setTrie] = useState("default")
   const [type, setType] = useState([])
   const [poids, setPoids] = useState({"param": ">=", "value": 0})
@@ -37,16 +36,16 @@ function Catalogue() {
     pokeTrieList = pokeTrieList.toSorted((a, b) => a.nom.localeCompare(b.nom))
   }
 
-  let pokeFiltrer = pokeTrieList
   const param = {
     ">=": (a, b) => a >= b,
     "<=": (a, b) => a <= b,
     "==": (a, b) => a === b
   }
-  pokeFiltrer = pokeFiltrer.filter(poke => type.every(t => poke.type.includes(t)))
-                           .filter(poke => param[poids.param](poke.poids, poids.value))
-                           .filter(poke => param[taille.param](poke.grandeur, taille.value))
-                           .filter(poke => param[prix.param](poke.prix, prix.value))
+  const pokeFiltrer = pokeTrieList.filter(poke => poke.nom.toLowerCase().includes(nom.toLowerCase()))
+                          .filter(poke => type.every(t => poke.type.includes(t)))
+                          .filter(poke => param[poids.param](poke.poids, poids.value))
+                          .filter(poke => param[taille.param](poke.grandeur, taille.value))
+                          .filter(poke => param[prix.param](poke.prix, prix.value))
   let listFinal = pokeFiltrer
 
   return (
@@ -65,6 +64,9 @@ function Catalogue() {
             <Poids selectPoids={(param, value) => setPoids({"param": param, "value":value})}/>
             <Taille selectTaille={(param, value) => {setTaille({"param": param, "value":value})}}/>
             <Prix selectPrix={(param, value) => setPrix({"param": param, "value":value})}/>
+          </div>
+          <div className='recherche'>
+            <input placeholder='Nom du Pokemon' onChange={value => setNom(value.target.value)}/>
           </div>
         </div>
         <PokeList cards={listFinal}/>
