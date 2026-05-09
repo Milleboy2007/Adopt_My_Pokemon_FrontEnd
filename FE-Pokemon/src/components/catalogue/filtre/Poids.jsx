@@ -9,7 +9,7 @@ function Poids(props) {
     }, [param, value])
   return (
     <>
-        <legend>Poids: </legend>
+        <legend>Poids en hectograme (hg): </legend>
         <select name="param" onChange={p => setParam(p.target.value)}>
             <option value=">=">Mininume</option>
             <option value="<=">Maximume</option>
@@ -17,7 +17,7 @@ function Poids(props) {
         </select>
 
         <legend> à </legend>
-        <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))} placeholder="hectograme (hg)"/>
+        <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))}/>
     </>
   )
 }

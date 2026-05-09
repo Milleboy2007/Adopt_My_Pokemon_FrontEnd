@@ -1,20 +1,22 @@
 import { useAsyncError, useLoaderData } from 'react-router-dom'
 import './catalogue.css'
 import PokeList from '../components/catalogue/PokeList'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Type from '../components/catalogue/filtre/Type'
 import Poids from '../components/catalogue/filtre/Poids'
 import Taille from '../components/catalogue/filtre/Taille'
 import Prix from '../components/catalogue/filtre/Prix'
 
 function Catalogue() {
-  const [trie, setTrie] = useState(null)
-  const [filtre, setFiltre] = useState(null)
-  const [type, setType] = useState([])
-  const [poids, setPoids] = useState({"param": null, "value": 0})
-  const [taille, setTaille] = useState({"param": null, "value": 0})
-  const [prix, setPrix] = useState({"param": null, "value": 0})
   const pokemons = useLoaderData()
+
+  const [trie, setTrie] = useState("default")
+  const [type, setType] = useState([])
+  const [poids, setPoids] = useState({"param": ">=", "value": 0})
+  const [taille, setTaille] = useState({"param": ">=", "value": 0})
+  const [prix, setPrix] = useState({"param": ">=", "value": 0})
+  const [nom, setNom] = useState("")
+
   
   if (!pokemons){
     return (
@@ -23,53 +25,49 @@ function Catalogue() {
       </div>
     )
   }
-
-  const pokeTrier = pokemons
-  const pokeFiltrer = pokeTrier
-
-  function switchFiltre(filtre){
-    switch (filtre) {
-      case "type":
-        setFiltre(<Type selectTypes={t => setType(t)}/>)
-        break;
-      case "poids":
-        setFiltre(<Poids selectPoids={(param, value) => setPoids({"param": param, "value":value})}/>)
-        break;
-      case "taille":
-        setFiltre(<Taille selectTaille={(param, value) => {setTaille({"param": param, "value":value})}}/>)
-        break;
-      case "prix":
-        setFiltre(<Prix selectPrix={(param, value) => setPrix({"param": param, "value":value})}/>)
-        break;
-      default:
-        setFiltre(null)
-        break;
-    }
+  
+  let pokeTrieList = pokemons
+  if(trie == "recent"){
+    pokeTrieList = pokeTrieList.toReversed()
+  }else if(trie == "priceUp"){
+    pokeTrieList = pokeTrieList.toSorted((a, b) => a.prix - b.prix)
+  }else if(trie == "priceDown"){
+    pokeTrieList = pokeTrieList.toSorted((a, b) => b.prix - a.prix)
+  }else if(trie == "alpha"){
+    pokeTrieList = pokeTrieList.toSorted((a, b) => a.nom.localeCompare(b.nom))
   }
+
+  let pokeFiltrer = pokeTrieList
+  const param = {
+    ">=": (a, b) => a >= b,
+    "<=": (a, b) => a <= b,
+    "==": (a, b) => a === b
+  }
+  pokeFiltrer = pokeFiltrer.filter(poke => type.every(t => poke.type.includes(t)))
+                           .filter(poke => param[poids.param](poke.poids, poids.value))
+                           .filter(poke => param[taille.param](poke.grandeur, taille.value))
+                           .filter(poke => param[prix.param](poke.prix, prix.value))
+  let listFinal = pokeFiltrer
 
   return (
       <div>
         <div className='filtre-trie'>
           <legend>Trié par: </legend>
           <select name='trie' onChange={o => setTrie(o.target.value)}>
-            <option value={null}>Plus vielle ajoue</option>
+            <option value="default">Plus vielle ajoue</option>
             <option value="recent">Plus récent ajoue</option>
             <option value="priceUp">Prix croissant</option>
             <option value="priceDown">Prix décroissant</option>
-            <option value="alphabétique">Alphabétique</option>
+            <option value="alpha">Alphabétique</option>
           </select>
-
-          <legend>Filtré par: </legend>
-          <select name='filtre' onChange={o => switchFiltre(o.target.value)}>
-            <option value={null}>Aucun</option>
-            <option value="type">Type</option>
-            <option value="poids">Poids</option>
-            <option value="taille">Taille</option>
-            <option value="prix">Prix</option>
-          </select>
+          <div className='filtre'>
+            <Type selectTypes={t => setType(t)}/>
+            <Poids selectPoids={(param, value) => setPoids({"param": param, "value":value})}/>
+            <Taille selectTaille={(param, value) => {setTaille({"param": param, "value":value})}}/>
+            <Prix selectPrix={(param, value) => setPrix({"param": param, "value":value})}/>
+          </div>
         </div>
-        {filtre}
-        <PokeList cards={pokeFiltrer}/>
+        <PokeList cards={listFinal}/>
       </div>
   )
 }

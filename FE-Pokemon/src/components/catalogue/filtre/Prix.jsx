@@ -9,7 +9,7 @@ function Prix(props) {
     }, [param, value])
   return (
     <>
-        <legend>Prix: </legend>
+        <legend>Prix en PokeCredits: </legend>
         <select name="param" onChange={p => setParam(p.target.value)}>
             <option value=">=">Mininume</option>
             <option value="<=">Maximume</option>
@@ -17,7 +17,7 @@ function Prix(props) {
         </select>
 
         <legend> à </legend>
-        <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))} placeholder="PokeCredits"/>
+        <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))}/>
     </>
   )
 }
