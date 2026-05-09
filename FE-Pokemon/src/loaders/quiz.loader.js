@@ -1,8 +1,8 @@
 import { getQuizzes, getQuiz } from "../services/api"
 import { requiredAuth } from "../services/auth"
 
-export async function quizLoader({ params }) {
-  await requiredAuth()
+export async function quizLoader({ params, request }) {
+  await requiredAuth(request)
 try {
   const data = await getQuiz(params.id)
   
@@ -14,8 +14,8 @@ try {
   throw error
   }
 }
-export async function quizzesLoader() {
-  await requiredAuth()
+export async function quizzesLoader({request}) {
+  await requiredAuth(request)
 
   const quizzes = await getQuizzes()
   return { quizzes }

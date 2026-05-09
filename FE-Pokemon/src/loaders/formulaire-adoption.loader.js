@@ -1,9 +1,9 @@
 import { requiredAuth } from "../services/auth";
 import { getSinglePokemon } from "../services/api";
 
-export default async function formAdoptionLoader({ params }) {
+export default async function formAdoptionLoader({ params, request }) {
     //verifier utili connecter
-    await requiredAuth()
+    await requiredAuth(request)
 
     //le pokemon selectionner
     const pokemon = await getSinglePokemon(params.id)
