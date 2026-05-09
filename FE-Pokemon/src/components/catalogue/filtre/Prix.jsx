@@ -8,7 +8,7 @@ function Prix(props) {
         props.selectPrix(param, value)
     }, [param, value])
   return (
-    <>
+    <div className="filtre-prix">
         <legend>Prix en PokeCredits: </legend>
         <select name="param" onChange={p => setParam(p.target.value)}>
             <option value=">=">Mininume</option>
@@ -18,7 +18,7 @@ function Prix(props) {
 
         <legend> à </legend>
         <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))}/>
-    </>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 
 function Type(props) {
   return (
-    <>
+    <div className="filtre-type">
         <legend>Type: </legend>
         <select multiple onChange={t => props.selectTypes(Array.from(t.target.selectedOptions, option => option.value))}>
             <option value="normal">normal</option>
@@ -23,7 +23,7 @@ function Type(props) {
             <option value="steel">steel</option>
             <option value="fairy">fairy</option>
         </select>
-    </>
+    </div>
   )
 }
 

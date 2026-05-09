@@ -50,15 +50,22 @@ function Catalogue() {
 
   return (
       <div>
-        <div className='filtre-trie'>
-          <legend>Trié par: </legend>
-          <select name='trie' onChange={o => setTrie(o.target.value)}>
-            <option value="default">Plus vielle ajoue</option>
-            <option value="recent">Plus récent ajoue</option>
-            <option value="priceUp">Prix croissant</option>
-            <option value="priceDown">Prix décroissant</option>
-            <option value="alpha">Alphabétique</option>
-          </select>
+        <div className='champ'>
+          <div className='recherche'>
+            <input placeholder='Nom du Pokemon' onChange={value => setNom(value.target.value)}/>
+          </div>
+
+          <div className='trie'>
+            <legend>Trié par: </legend>
+            <select name='trie' onChange={o => setTrie(o.target.value)}>
+              <option value="default">Plus vielle ajoue</option>
+              <option value="recent">Plus récent ajoue</option>
+              <option value="priceUp">Prix croissant</option>
+              <option value="priceDown">Prix décroissant</option>
+              <option value="alpha">Alphabétique</option>
+            </select>
+          </div>
+
           <div className='filtre'>
             <p>Filter par:</p>
             <Type selectTypes={t => setType(t)}/>
@@ -66,11 +73,11 @@ function Catalogue() {
             <Taille selectTaille={(param, value) => {setTaille({"param": param, "value":value})}}/>
             <Prix selectPrix={(param, value) => setPrix({"param": param, "value":value})}/>
           </div>
-          <div className='recherche'>
-            <input placeholder='Nom du Pokemon' onChange={value => setNom(value.target.value)}/>
-          </div>
         </div>
-        <PokeList cards={listFinal}/>
+
+        <div className='list'>
+          <PokeList cards={listFinal}/>
+        </div>
       </div>
   )
 }
