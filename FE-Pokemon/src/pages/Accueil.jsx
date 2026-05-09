@@ -31,7 +31,7 @@ function Accueil({ setPage }) {
             title="Compte"
             description="Consulter le profil"
             buttonText="Voir"
-            link="/compte"
+            link="/user"
           />
         </div>
       </div>
