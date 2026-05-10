@@ -38,7 +38,16 @@ function SelectPoke({poke, act, reload}) {
       <div className='stats'>
         <p>Level: {poke.niveau}</p>
         <p>Points Interaction: {poke.pointsInteraction}</p>
-        <p>Type: {poke.type.join(', ')}</p>
+        <p>
+          Type:
+          {poke.type.map(type =>(
+          <span className={`type-badge type-${type}`} key={type}>
+              {type}
+          </span>
+          ))}
+        </p>
+        <p>Taille: {poke.grandeur * 10 } cm</p>
+        <p>Poids: {poke.poids / 10} kg</p>
       </div>
 
       <div className='interaction'>
