@@ -1,4 +1,6 @@
-.pokemon-page {
+.dashboard {
     min-height: 60vh;
     padding: 40px;
+    display: flex;
+    flex-direction: row;
 }

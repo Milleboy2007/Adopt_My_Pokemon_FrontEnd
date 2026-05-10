@@ -1,6 +1,7 @@
-import { getPokemons } from "../services/api";
+import { getMyPokemon, getPokemons, getUserPokemons } from "../services/api";
+import { requiredAuth } from "../services/auth";
 
-export default async function pokemonsLoader(){
+export async function pokemonsLoader(){
     try{
         const allPoke = await getPokemons();
         return allPoke
@@ -9,4 +10,10 @@ export default async function pokemonsLoader(){
             return null
         }
     }
+}
+
+export async function myPokemonLoader({request}){
+    const user = await requiredAuth(request)
+    const pokemons = await getMyPokemon(user.id)
+    return {"user": user, "pokemons": pokemons}
 }

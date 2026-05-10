@@ -9,7 +9,7 @@ import MyPokemon from './pages/MyPokemon'
 import Quiz from './components/Quiz/Quiz';
 import MainLayout from './layouts/MainLayout/MainLayout'
 import ProfileLayout from './layouts/ProfileLayout/ProfileLayout'
-import pokemonsLoader from './loaders/pokemons.loader';
+import {pokemonsLoader, myPokemonLoader} from './loaders/pokemons.loader';
 import loginAction from './actions/login.action';
 import loginLoader from './loaders/login.loader';
 import logoutAction from './actions/logout.action';
@@ -56,7 +56,7 @@ export default function App() {
 
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
-          <Route path="myPokemons" element={<MyPokemon/>} loader={authLoader}/>
+          <Route path="myPokemons" element={<MyPokemon/>} loader={myPokemonLoader}/>
           <Route path="modifPass" element={<ModifPass/>} action={modifPassAction}/>
           <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
           <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>

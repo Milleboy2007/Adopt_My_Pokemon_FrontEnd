@@ -1,0 +1,9 @@
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 32px auto;
+  padding: 0;
+  list-style: none;
+  max-width: 1400px;
+}

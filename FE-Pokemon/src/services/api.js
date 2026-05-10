@@ -31,6 +31,7 @@ async function request(path, options = {}) {
 export const getPokemons = async () => await request("/pokemons")
 export const getSinglePokemon = async (id) => await request(`/pokemons/${id}`)
 export const getUserPokemons = async (userId) => await request(`/users/${userId}/pokemons`)
+export const getMyPokemon = async (id) => await request(`/pokemons/MyPokemons/${id}`)
 export const getQuiz = async (id) => await request(`/quiz/${id}`)
 export const getQuizzes = async () => await request(`/quiz`)
 
