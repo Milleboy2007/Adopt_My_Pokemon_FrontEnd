@@ -42,3 +42,33 @@
     font-weight: 500;
     margin: 64px 0;
 }
+
+.recherche {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  width: 100%;
+}
+
+.recherche input {
+  width: 100%;
+  max-width: 450px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 30px;
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.recherche input:focus {
+  background-color: #ffffff;
+  border-color: #3b4cca;
+  box-shadow: 0 4px 12px rgba(59, 76, 202, 0.15);
+}
+
+.recherche input::placeholder {
+  color: #adb5bd;
+}

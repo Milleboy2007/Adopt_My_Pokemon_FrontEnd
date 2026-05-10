@@ -9,6 +9,7 @@ function MyPokemon() {
   const {user, pokemons} = useLoaderData()
   const [pokeList, setPokeList] = useState(pokemons)
   const [poke, setPoke] = useState()
+  const [nom, setNom] = useState("")
 
   function selectPoke(selec){
     if(selec != poke){
@@ -32,7 +33,10 @@ function MyPokemon() {
       <div className='dashboard'>
         <div className='pokeList'>
           <h1>Mes Pokémon - Ranch de {user.email}</h1>
-          <MyPokeList cards={pokeList} selectPoke={poke => selectPoke(poke)}/>
+          <div className='recherche'>
+            <input placeholder='Nom du Pokemon' onChange={value => setNom(value.target.value)}/>
+          </div>
+          <MyPokeList cards={pokeList.filter(poke => poke.nom.toLowerCase().includes(nom.toLowerCase()) || poke.pseudo.toLowerCase().includes(nom.toLowerCase()))} selectPoke={poke => selectPoke(poke)}/>
         </div>
         <div className='pokeDetail'>
           {poke ?

@@ -2,7 +2,25 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
-    padding: 0;
+    padding: 4px;
     margin: 0;
     list-style: none;
+
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.poke-list::-webkit-scrollbar {
+    width: 8px;
+}
+.poke-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.poke-list::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 10px;
+}
+.poke-list::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
 }
