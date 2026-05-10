@@ -100,6 +100,13 @@ export const changePokePseudo = async (id, newPseudo) => {
   })
 }
 
+export const newInteraction = async (pokeId, action, userId) => {
+  return await request(`/pokemons/${pokeId}/newInteraction`, {
+    method: "POST",
+    body: JSON.stringify({"userId": userId, "typeAction": action})
+  })
+}
+
 // ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons/create", {
