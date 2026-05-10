@@ -1,10 +1,12 @@
 import './pokeCard.css'
 
-function PokeCard({props, selectPoke}) {
+function PokeCard({props, selectPoke, isActive}) {
 
   return (
-    <li className='pokeCard' onClick={() => selectPoke(props)}>
-        <img src={props.img} alt={props.nom}/>
+    <li className={`pokeCard ${isActive? 'active': ''}`} onClick={() => selectPoke(props)}>
+        <div className='avatar-box'>
+            <img src={props.img} alt={props.nom}/>
+        </div>
         <div className='nom'>
             {props.pseudo == ""?
                 <p>{props.nom}</p>:
@@ -13,6 +15,7 @@ function PokeCard({props, selectPoke}) {
                     <p>({props.nom})</p>
                 </>
             }
+            <p className='pts-badge'>⭐ {props.pointsInteraction} pts</p>
         </div>
     </li>
   )
