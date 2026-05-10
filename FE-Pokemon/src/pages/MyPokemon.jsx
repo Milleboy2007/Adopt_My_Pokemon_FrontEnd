@@ -16,11 +16,15 @@ function MyPokemon() {
     }else setPoke(undefined)
   }
 
+  async function reload(){
+    setPoke(await getSinglePokemon(poke.id))
+    setPokeList(await getMyPokemon(user.id))
+  }
+
   async function interagire(action){
     console.log(action)
     await newInteraction(poke.id, action, user.id)
-    setPoke(await getSinglePokemon(poke.id))
-    setPokeList(await getMyPokemon(user.id))
+    reload()
   }
 
   return (
@@ -32,7 +36,7 @@ function MyPokemon() {
         </div>
         <div className='pokeDetail'>
           {poke ?
-            <SelectPoke poke={poke} act={action => interagire(action)}/>:
+            <SelectPoke poke={poke} act={action => interagire(action)} reload={reload}/>:
             <p>Clické sur un pokemon pour le sélectionner</p>
           }
         </div>

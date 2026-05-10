@@ -95,7 +95,13 @@ export const updateUser = async (id, creds) => {
 };
 
 export const changePokePseudo = async (id, newPseudo) => {
-  return await request(`pokemons/pseudoChange/${id}/${newPseudo}`, {
+  return await request(`/pokemons/pseudoChange/${id}/${newPseudo}`, {
+    method: "POST"
+  })
+}
+
+export const resetPokePseudo = async (id) => {
+  return await request(`/pokemons/resetPseudo/${id}`, {
     method: "POST"
   })
 }
