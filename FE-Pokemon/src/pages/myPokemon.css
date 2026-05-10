@@ -1,6 +1,30 @@
 .dashboard {
-    min-height: 60vh;
-    padding: 40px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 16px;
+    color: #1a1a2e;
+}
+
+.pokeList {
+    flex: 1;
+    min-width: 300px;
+}
+
+.pokeList h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.pokeDetail {
+    width: 320px;
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    text-align: center;
 }

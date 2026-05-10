@@ -94,6 +94,12 @@ export const updateUser = async (id, creds) => {
   });
 };
 
+export const changePokePseudo = async (id, newPseudo) => {
+  return await request(`pokemons/pseudoChange/${id}/${newPseudo}`, {
+    method: "POST"
+  })
+}
+
 // ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons/create", {
