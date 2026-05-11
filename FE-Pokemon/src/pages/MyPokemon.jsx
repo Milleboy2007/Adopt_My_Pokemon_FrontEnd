@@ -23,7 +23,6 @@ function MyPokemon() {
   }
 
   async function interagire(action){
-    console.log(action)
     await newInteraction(poke.id, action, user.id)
     reload()
   }
