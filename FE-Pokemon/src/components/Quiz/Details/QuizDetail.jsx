@@ -38,7 +38,7 @@ async function answerQuestion(answer) {
     if (isLastQuestion) {
       const user = await getCurrentUser()
       const creditsEarned = Math.round(newScore * (quiz.recompenseCredits / questions.length))
-      await addCredits(user.id, quiz.id, creditsEarned, quiz.difficulte)
+      await addCredits(user.id, creditsEarned, quiz.difficulte)
       setShowResult(true)
     } else {
       setCurrentQuestionIndex(i => i + 1)
