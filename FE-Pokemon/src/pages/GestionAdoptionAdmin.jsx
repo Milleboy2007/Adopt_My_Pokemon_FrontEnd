@@ -56,6 +56,8 @@ function GestionAdoptionAdmin() {
             {demandes.length === 0 && (
               <p className="empty">Aucune demande dans cette catégorie.</p>
             )}
+            
+            {console.log(demandes)}
 
             {demandes.map((d) => (
               <div
@@ -75,31 +77,31 @@ function GestionAdoptionAdmin() {
                 {openId === d.id && (
                   <div className="card__body">
                     <p>
-                      <b>idClient:</b> {d.idClient}
+                      <b>idClient:</b> {d.formulaire.idClient}
                     </p>
                     <p>
-                      <b>Âge:</b> {d.age}
+                      <b>Âge:</b> {d.formulaire.age}
                     </p>
                     <p>
-                      <b>Logement:</b> {d.typeLogement}
+                      <b>Logement:</b> {d.formulaire.typeLogement}
                     </p>
                     <p>
-                      <b>Motivation:</b> {d.motivationAdoption}
+                      <b>Motivation:</b> {d.formulaire.motivationAdoption}
                     </p>
                     <p>
-                      <b>Temps dispo:</b> {d.tempsDisponibleParJour}h/j
+                      <b>Temps dispo:</b> {d.formulaire.tempsDisponibleParJour}h/j
                     </p>
                     <p>
-                      <b>Engagement:</b> {d.engagementLongTerme}
+                      <b>Engagement:</b> {d.formulaire.engagementLongTerme}
                     </p>
                     <p>
-                      <b>Déjà eu Pokémon:</b> {d.aDejaEuPokemon ? "Oui" : "Non"}
+                      <b>Déjà eu Pokémon:</b> {d.formulaire.aDejaEuPokemon ? "Oui" : "Non"}
                     </p>
                     <p>
-                      <b>Animaux:</b> {d.autresAnimauxMaison || "—"}
+                      <b>Animaux:</b> {d.formulaire.autresAnimauxMaison || "—"}
                     </p>
                     <p>
-                      <b>Gestion:</b> {d.gestionAdaptationPokemon}
+                      <b>Gestion:</b> {d.formulaire.gestionAdaptationPokemon}
                     </p>
                   </div>
                 )}
@@ -111,34 +113,34 @@ function GestionAdoptionAdmin() {
             {selected ? (
               <>
                 <p className="detail__row">
-                  <b>id:</b> {selected.id}
+                  <b>id:</b> {selected.formulaire.id}
                 </p>
                 <p className="detail__row">
-                  <b>idClient:</b> {selected.idClient}
+                  <b>idClient:</b> {selected.formulaire.idClient}
                 </p>
                 <p className="detail__row">
-                  <b>nomComplet:</b> {selected.nomComplet}
+                  <b>nomComplet:</b> {selected.formulaire.nomComplet}
                 </p>
                 <p className="detail__row">
-                  <b>age:</b> {selected.age}
+                  <b>age:</b> {selected.formulaire.age}
                 </p>
                 <p className="detail__row">
                   <b>aDejaEuPokemon:</b>{" "}
-                  {selected.aDejaEuPokemon ? "Oui" : "Non"}
+                  {selected.formulaire.aDejaEuPokemon ? "Oui" : "Non"}
                 </p>
                 <p className="detail__row">
                   <b>autresAnimauxMaison:</b>{" "}
-                  {selected.autresAnimauxMaison || "—"}
+                  {selected.formulaire.autresAnimauxMaison || "—"}
                 </p>
                 <p className="detail__row">
-                  <b>MotivationAdoption:</b> {selected.motivationAdoption}
+                  <b>MotivationAdoption:</b> {selected.formulaire.motivationAdoption}
                 </p>
                 <p className="detail__row">
                   <b>tempsDisponibleParJour:</b>{" "}
-                  {selected.tempsDisponibleParJour}h
+                  {selected.formulaire.tempsDisponibleParJour}h
                 </p>
                 <p className="detail__row">
-                  <b>engagementLongTerme:</b> {selected.engagementLongTerme}
+                  <b>engagementLongTerme:</b> {selected.formulaire.engagementLongTerme}
                 </p>
 
                 <div className="detail__row">
@@ -146,7 +148,7 @@ function GestionAdoptionAdmin() {
                   <textarea
                     className="ta"
                     readOnly
-                    value={selected.gestionAdaptationPokemon}
+                    value={selected.formulaire.gestionAdaptationPokemon}
                   />
                 </div>
 

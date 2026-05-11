@@ -161,6 +161,7 @@ function FormulaireAdoption() {
                 <label>Animaux à la maison:</label>
                 <select value={autresAnimauxMaison} onChange={(e) => setAutresAnimauxMaison(e.target.value)}>
                   <option value="">▼</option>
+                  <option>aucun</option>
                   <option>chat</option>
                   <option>chien</option>
                   <option>hamster</option>
