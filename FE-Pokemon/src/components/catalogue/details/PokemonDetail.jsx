@@ -1,9 +1,10 @@
-import { useLoaderData, useRouteLoaderData } from "react-router-dom";
+import { useLoaderData, useRouteLoaderData, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './pokemonDetail.css'
 
 function PokemonDetail() {
     const  { pokemon } = useLoaderData();
+    const navigate = useNavigate();
 
     return (
         <div className="detail-page">
@@ -28,7 +29,12 @@ function PokemonDetail() {
                 {pokemon.description}
             </p>
             <div className="detail-buttons">
-            <Link to="/catalogue" className="back-btn">← Retour</Link> 
+            <button onClick={() => {
+                sessionStorage.setItem("keep_filters", "true")
+                navigate(-1)
+                }} className="back-btn" style={{cursor: 'pointer', border: 'none'}}>
+                ← Retour
+            </button>
             <Link to={`/adoption/${pokemon.id}`} className="adopt-btn">Adopter ce Pokémon !</Link>
              </div>
             </div>

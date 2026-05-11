@@ -23,7 +23,7 @@ const POKE_TYPES = [
 ]
 
 function Type(props) {
-  const [typeActifs, setTypeActifs] = useState([])
+  const [typeActifs, setTypeActifs] = useState( props.valeurActuelle || [])
 
   function toggleType(typeClique) {
     let temp;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 
 function Prix(props) {
-    const [param, setParam] = useState(">=")
-    const [value, setValue] = useState(0)
+    const [param, setParam] = useState(props.valeurActuelle.param)
+    const [value, setValue] = useState(props.valeurActuelle.value)
 
     useEffect(() => {
         props.selectPrix(param, value)
@@ -10,7 +10,7 @@ function Prix(props) {
   return (
     <div className="filtre-prix">
         <legend>Prix en PokeCredits: </legend>
-        <select name="param" onChange={p => setParam(p.target.value)}>
+        <select name="param" value={param} onChange={p => setParam(p.target.value)}>
             <option value=">=">Mininume</option>
             <option value="<=">Maximume</option>
             <option value="==">Égale</option>
