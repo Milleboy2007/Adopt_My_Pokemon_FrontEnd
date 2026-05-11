@@ -6,9 +6,7 @@ import "./LogIn.css"
 function LogIn(){
     return (
         <>
-            <main>
-                <LogInForms/>
-            </main>
+            <LogInForms/>
         </>
     )
 } export default LogIn

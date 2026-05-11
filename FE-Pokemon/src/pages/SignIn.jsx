@@ -6,9 +6,7 @@ import "./SignIn.css"
 function SignIn(){
     return (
         <>
-            <main>
                 <SignInForms/>
-            </main>
         </>
     )
 } export default SignIn
