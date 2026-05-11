@@ -1,9 +1,9 @@
 import { requiredAuth } from "../services/auth";
 import { getPendingAdoptions, getApprovedAdoptions, getRejectedAdoptions } from "../services/api";
 
-export default async function gestionAdoptionLoader() {
+export default async function gestionAdoptionLoader({ request }) {
     //assurer utilisateur est connecter
-    await requiredAuth()
+    await requiredAuth(request)
 
     //appel des 3 liste
     const pending = await getPendingAdoptions()

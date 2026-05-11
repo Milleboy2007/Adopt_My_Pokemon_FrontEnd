@@ -38,14 +38,19 @@
   margin-top: 8px;
   padding: 8px 24px;
   background: #f5d060;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 20px;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
-  transition: background 0.2s ease;
+  transition: 0.2s ease;
 }
 
-.PokeCard a:hover {
+.PokeCard a:hover{
+  color: white;
   background: #1a53ff;
+}
+
+.PokeCard:has(.card-link:hover) p {
+  color: white;
 }

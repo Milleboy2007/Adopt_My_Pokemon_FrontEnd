@@ -1,0 +1,51 @@
+.filtre-type {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.filtre-type legend {
+  font-weight: 700;
+  font-size: 14px;
+  color: #444;
+}
+
+.badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-type {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-type.inactif {
+  background-color: #e9ecef;
+  color: #6c757d;
+  box-shadow: none;
+}
+
+.btn-type.inactif:hover {
+  background-color: #dde2e6;
+  color: #333;
+}
+
+.btn-type.actif {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-type.type-electric.actif, 
+.btn-type.type-steel.actif {
+  color: #333; 
+}

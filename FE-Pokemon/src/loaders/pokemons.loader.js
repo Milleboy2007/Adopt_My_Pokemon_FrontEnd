@@ -1,5 +1,12 @@
 import { getPokemons } from "../services/api";
 
 export default async function pokemonsLoader(){
-    return await getPokemons();
+    try{
+        const allPoke = await getPokemons();
+        return allPoke
+    }catch (e) {
+        if (e.status === 404){
+            return null
+        }
+    }
 }

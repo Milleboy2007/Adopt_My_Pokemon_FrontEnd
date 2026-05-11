@@ -1,0 +1,25 @@
+import { useState, useEffect } from "react"
+
+function Poids(props) {
+    const [param, setParam] = useState(props.valeurActuelle.param)
+    const [value, setValue] = useState(props.valeurActuelle.value)
+
+    useEffect(() => {
+        props.selectPoids(param, value)
+    }, [param, value])
+  return (
+    <div className="filtre-poids">
+        <legend>Poids en hectograme (hg): </legend>
+        <select name="param" value={param} onChange={p => setParam(p.target.value)}>
+            <option value=">=">Mininume</option>
+            <option value="<=">Maximume</option>
+            <option value="==">Égale</option>
+        </select>
+
+        <legend> à </legend>
+        <input type="number" value={value} min={0} onChange={v => setValue(parseInt(v.target.value))}/>
+    </div>
+  )
+}
+
+export default Poids
