@@ -30,8 +30,8 @@ async function request(path, options = {}) {
 // Requêtes GET
 export const getPokemons = async () => await request("/pokemons")
 export const getSinglePokemon = async (id) => await request(`/pokemons/${id}`)
-export const getHostPokemons = async (userId) => await request(`/users/${userId}/pokemons`)
-export const getSingleHostPokemon = async (userId, vanId) => await request(`/users/${userId}/pokemons/${vanId}`)
+export const getUserPokemons = async (userId) => await request(`/users/${userId}/pokemons`)
+export const getMyPokemon = async (id) => await request(`/pokemons/MyPokemons/${id}`)
 export const getQuiz = async (id) => await request(`/quiz/${id}`)
 export const getQuizzes = async () => await request(`/quiz`)
 
@@ -94,9 +94,28 @@ export const updateUser = async (id, creds) => {
   });
 };
 
+export const changePokePseudo = async (id, newPseudo) => {
+  return await request(`/pokemons/pseudoChange/${id}/${newPseudo}`, {
+    method: "POST"
+  })
+}
+
+export const resetPokePseudo = async (id) => {
+  return await request(`/pokemons/resetPseudo/${id}`, {
+    method: "POST"
+  })
+}
+
+export const newInteraction = async (pokeId, action, userId) => {
+  return await request(`/pokemons/${pokeId}/newInteraction`, {
+    method: "POST",
+    body: JSON.stringify({"userId": userId, "typeAction": action})
+  })
+}
+
 // ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
-  return await request("/pokemons", {
+  return await request("/pokemons/create", {
     method: "POST",
     body: JSON.stringify(p)
   })
