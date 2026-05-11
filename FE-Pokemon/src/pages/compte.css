@@ -1,0 +1,137 @@
+/* =========================
+   GLOBAL LAYOUT FIX
+========================= */
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f4f6ff;
+}
+
+/* =========================
+   SECONDARY NAVBAR
+========================= */
+
+.navbar2 {
+    background-color: #f5f7ff;
+    border-top: 2px solid #d6dcff;
+    border-bottom: 2px solid #d6dcff;
+    padding: 0.4rem 2rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar2 ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar2 a {
+    text-decoration: none;
+    color: #3a4b8a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.navbar2 a:hover {
+    background-color: #e6ebff;
+    color: #1a53ff;
+}
+
+.navbar2 a.active {
+    background-color: #1a53ff;
+    color: white;
+}
+
+/* =========================
+   ACCOUNT PAGE
+========================= */
+
+.account-page {
+    font-family: Arial, sans-serif;
+    padding-bottom: 20px;
+}
+
+.account-page h1 {
+    text-align: center;
+    color: #1a53ff;
+    margin-bottom: 2rem;
+}
+
+/* Grid layout */
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.account-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.account-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #3a4b8a;
+    font-size: 1rem;
+}
+
+.account-card p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #111;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Password pencil icon */
+.account-card img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Optional link alignment fix */
+.account-card a {
+    display: flex;
+    align-items: center;
+}
+
+/* Highlighted card */
+.account-card.highlight {
+    background: linear-gradient(135deg, #1a53ff, #4f7bff);
+    color: white;
+}
+
+.account-card.highlight h3,
+.account-card.highlight p {
+    color: white;
+}

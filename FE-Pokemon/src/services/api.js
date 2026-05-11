@@ -87,6 +87,13 @@ export const logoutUser = async () => {
   })
 }
 
+export const updateUser = async (id, creds) => {
+  return await request(`/auth/update/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(creds)
+  });
+};
+
 // ---------------  Requêtes Creation de ressources ---------------------
 export async function createPokemon(p) {
   return await request("/pokemons", {
@@ -99,5 +106,13 @@ export async function satisfactionForm(s) {
   return await request("/satisfaction-form/createFormSatisfaction", {
     method: "POST",
     body: JSON.stringify(s)
+  })
+}
+
+
+export async function addCredits(userId, quizId, credits, difficulte) {
+  return await request(`/quiz/credits/add`, {
+    method: "POST",
+    body: JSON.stringify({ userId, quizId, credits, difficulte })
   })
 }

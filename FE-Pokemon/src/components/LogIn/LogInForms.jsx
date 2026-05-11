@@ -8,18 +8,18 @@ function LogInForms(){
         <Form
             method="post"
         >
-            <h1>Log into your account🧢⚡️</h1>
+            <h1>Connectez-vous à votre compte🧢⚡️</h1>
             <label >
-                Email
+                Courriel
                 <input name="email" type="text" id="email" placeholder="ex: bobby@gmail.com"/>
             </label>
             <label>
-                Password
+                Mot de passe
                 <input name="password" type="password"  id="password" placeholder="Password"/>
             </label>
             <button type="submit">Log in</button>
             <p>
-                Don't have an account? <Link to="/signin">Create one</Link>
+                Pas de compte? <Link to="/signin">En créer un</Link>
             </p>
         </Form>
     )

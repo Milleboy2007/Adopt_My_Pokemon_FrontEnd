@@ -11,7 +11,7 @@ function HeaderUser(){
                 <Link to="/user/quiz">Quiz</Link>
             </li>
             <li>
-                <Link to="/user/myPokemons">My pokemons</Link>
+                <Link to="/user/myPokemons">Mes Pokémons</Link>
             </li>
             
         </ul>

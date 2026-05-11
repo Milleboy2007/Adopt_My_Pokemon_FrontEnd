@@ -3,7 +3,7 @@ import './myPokemon.css'
 function MyPokemon() {
   return (
     <>
-    <p>
+    <p className='pokemon-page'>
       My pokemons
     </p>
     </>

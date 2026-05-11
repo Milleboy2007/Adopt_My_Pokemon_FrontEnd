@@ -1,91 +1,77 @@
+/* NAVBAR CONTAINER */
 .navbar1 {
     background-color: #1a53ff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
-    border-bottom: 4px solid #ffffff; /* Rappel du footer */
+    padding: 0.6rem 5%;
+    border-bottom: 4px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
+    font-family: Arial, sans-serif;
 }
 
-/* Section Logo */
+/* LOGO + TITLE */
 .navbar1 p {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    gap: 10px;
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.navbar1 p img {
+/* LOGO IMAGE */
+.navbar1 img {
     width: 40px;
     height: 40px;
-    transition: transform 0.6s ease-in-out;
+    margin-right: 10px;
 }
 
-/* Animation de la pokéball au survol */
-.navbar1 p:hover img {
-    transform: rotate(360deg);
-}
-
-/* Liste de navigation */
+/* NAV LINKS CONTAINER */
 .navbar1 ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    gap: 25px;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
-/* Styles des liens */
-.navbar1 ul li a {
-    color: white;
+/* LINKS */
+.navbar1 a {
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s, border-bottom 0.3s;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-}
-
-.navbar1 ul li a:hover {
-    color: #ffcb05; /* Jaune Pokémon */
-    border-bottom: 2px solid #ffcb05;
-}
-
-/* Bouton Logout spécial */
-.navbar1 button {
-    background-color: #ff4d4d; /* Rouge type Feu */
     color: white;
-    border: 2px solid white;
-    padding: 8px 15px;
-    border-radius: 20px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.navbar1 a:hover {
+    color: #ffcc00;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    background-color: white;
+    color: #1a53ff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
+    transition: 0.2s ease;
 }
 
-.navbar1 button:hover {
-    background-color: #cc0000;
-    transform: scale(1.05);
+/* LOGOUT HOVER */
+.logout-btn:hover {
+    background-color: #ffcc00;
+    color: black;
 }
 
-/* Responsive : On passe en colonne sur mobile */
-@media (max-width: 768px) {
-    .navbar1 {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-    
-    .navbar1 ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+/* OPTIONAL: FIX ALIGNMENT FOR FORM */
+.logout {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding:0;
 }
