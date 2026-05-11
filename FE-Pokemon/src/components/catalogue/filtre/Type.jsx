@@ -1,28 +1,58 @@
+import { useState } from 'react'
+import './type.css'
+
+const POKE_TYPES = [
+  "normal",
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "ice",
+  "fighting",
+  "poison",
+  "ground",
+  "flying",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dragon",
+  "dark",
+  "steel",
+  "fairy"
+]
 
 function Type(props) {
+  const [typeActifs, setTypeActifs] = useState([])
+
+  function toggleType(typeClique) {
+    let temp;
+    if (typeActifs.includes(typeClique)) {
+      temp = typeActifs.filter(t => t !== typeClique);
+    } else {
+      temp = [...typeActifs, typeClique];
+    }
+    
+    setTypeActifs(temp);
+    props.selectTypes(temp);
+  }
+
   return (
     <div className="filtre-type">
-        <legend>Type: </legend>
-        <select multiple onChange={t => props.selectTypes(Array.from(t.target.selectedOptions, option => option.value))}>
-            <option value="normal">normal</option>
-            <option value="fire">fire</option>
-            <option value="water">water</option>
-            <option value="grass">grass</option>
-            <option value="electric">electric</option>
-            <option value="ice">ice</option>
-            <option value="fighting">fighting</option>
-            <option value="poison">poison</option>
-            <option value="ground">ground</option>
-            <option value="flying">flying</option>
-            <option value="psychic">psychic</option>
-            <option value="bug">bug</option>
-            <option value="rock">rock</option>
-            <option value="ghost">ghost</option>
-            <option value="dragon">dragon</option>
-            <option value="dark">dark</option>
-            <option value="steel">steel</option>
-            <option value="fairy">fairy</option>
-        </select>
+      <legend>Types : </legend>
+      <div className="badges-grid">
+        {POKE_TYPES.map(type => {
+          const estActif = typeActifs.includes(type);
+          return (
+            <button key={type}
+                    className={`btn-type ${estActif ? `type-${type} actif` : 'inactif'}`}
+                    onClick={() => toggleType(type)}
+            >
+              {type}
+            </button>
+          );
+        })}
+      </div>
     </div>
   )
 }
