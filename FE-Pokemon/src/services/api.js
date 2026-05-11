@@ -109,10 +109,24 @@ export async function satisfactionForm(s) {
   })
 }
 
-
-export async function addCredits(userId, quizId, credits, difficulte) {
+// Ajouter des crédits après un quiz (user connecté)
+export async function addCredits(userId, credits, difficulte) {
   return await request(`/quiz/credits/add`, {
     method: "POST",
-    body: JSON.stringify({ userId, quizId, credits, difficulte })
+    body: JSON.stringify({ userId, credits, difficulte }) 
   })
 }
+
+// Supprimer des crédits (user connecté pour un achat)
+export const suppCredits = async (credits) => 
+  await request(`/users/me/suppCredits`, {
+    method: "PATCH",
+    body: JSON.stringify({ credits })
+  })
+
+// Ajouter des crédits manuellement (admin)
+export const addCreditsAdmin = async (userId, credits) => 
+  await request(`/users/${userId}/addCredits`, {
+    method: "PATCH",
+    body: JSON.stringify({ credits })
+  })

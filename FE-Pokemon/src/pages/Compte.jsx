@@ -1,11 +1,11 @@
 import "./compte.css";
-import { useOutletContext, Link } from "react-router-dom";
+import { useOutletContext, Link, useLoaderData } from "react-router-dom";
 import pencil from '../assets/pencil.png'
 
 function Compte() {
 
 
-  const { user } = useOutletContext();
+  const { user } = useLoaderData();
 
 
   return (
