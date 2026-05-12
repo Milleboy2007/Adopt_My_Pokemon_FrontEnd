@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { approveAdoption, rejectAdoption } from "../services/api";
 import "./GestionAdoptionAdmin.css";
@@ -10,18 +10,27 @@ function GestionAdoptionAdmin() {
   const [selected, setSelected] = useState(null);
   const [openId, setOpenId] = useState(null);
   const [raison, setRaison] = useState("");
+  const [demandes, setDemandes] = useState([]);
 
-  const demandes =
-    filtre === "EN_ATTENTE" ? pending : filtre === "APPROUVEE" ? approved : rejected;
+  useEffect(()=>{
+      setDemandes(filtre === "EN_ATTENTE" ? pending : filtre === "APPROUVEE" ? approved : rejected);
+  }, [filtre])
 
-  function toggleCard(e, id) {
+  function toggleCard(e, id, reason) {
     e.stopPropagation();
+    setRaison(reason);
     setOpenId(openId === id ? null : id);
   }
 
   async function handleAccepter() {
-    await approveAdoption(selected.id);
-    alert("Demande acceptée");
+    
+    try{
+      await approveAdoption(selected.id);
+      alert("Demande acceptée");
+    }catch{
+      alert("User pas asser de credit");
+    }
+    
   }
 
   async function handleRefuser() {
@@ -67,7 +76,7 @@ function GestionAdoptionAdmin() {
               >
                 <div
                   className="card__head"
-                  onClick={(e) => toggleCard(e, d.id)}
+                  onClick={(e) => toggleCard(e, d.id, d.rejectionReason)}
                 >
                   <span className="card__id">#{d.id}</span>
                   <span className="card__name">{d.nomComplet}</span>
@@ -84,6 +93,9 @@ function GestionAdoptionAdmin() {
                     </p>
                     <p>
                       <b>Logement:</b> {d.formulaire.typeLogement}
+                    </p>
+                    <p>
+                      <b>Prix:</b> {d.prix}
                     </p>
                     <p>
                       <b>Motivation:</b> {d.formulaire.motivationAdoption}
@@ -134,6 +146,12 @@ function GestionAdoptionAdmin() {
                 </p>
                 <p className="detail__row">
                   <b>MotivationAdoption:</b> {selected.formulaire.motivationAdoption}
+                </p>
+                <p className="detail__row">
+                  <b>prix:</b> {selected.prix}
+                </p>
+                <p className="detail__row">
+                  <b>logement:</b> {selected.formulaire.typeLogement}
                 </p>
                 <p className="detail__row">
                   <b>tempsDisponibleParJour:</b>{" "}

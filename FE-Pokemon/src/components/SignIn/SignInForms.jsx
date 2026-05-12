@@ -17,7 +17,7 @@ function SignInForms(){
                 Mot de passe
                 <input name="password" type="password" placeholder="Password"/>
             </label>
-            <button type="submit">Créer</button>
+            <button type="submit">Créer un compte</button>
             <p>Vous avez déjà un compte? <Link to="/login">Se connecter</Link></p>
         </Form>
     )
