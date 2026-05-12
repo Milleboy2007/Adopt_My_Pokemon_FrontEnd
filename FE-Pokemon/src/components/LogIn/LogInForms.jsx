@@ -16,7 +16,7 @@ function LogInForms(){
             Mot de passe
             <input name="password" type="password" placeholder="Password"/>
         </label>
-        <button type="submit">Log in</button>
+        <button type="submit">Se connecter</button>
         <p>Pas de compte? <Link to="/signin">En créer un</Link></p>
     </Form>
     )

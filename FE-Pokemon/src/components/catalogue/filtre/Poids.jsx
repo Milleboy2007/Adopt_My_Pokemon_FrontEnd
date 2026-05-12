@@ -11,9 +11,9 @@ function Poids(props) {
     <div className="filtre-poids">
         <legend>Poids en hectograme (hg): </legend>
         <select name="param" value={param} onChange={p => setParam(p.target.value)}>
-            <option value=">=">Mininume</option>
-            <option value="<=">Maximume</option>
-            <option value="==">Égale</option>
+            <option value=">=">Minimum</option>
+            <option value="<=">Maximum</option>
+            <option value="==">Égal</option>
         </select>
 
         <legend> à </legend>
