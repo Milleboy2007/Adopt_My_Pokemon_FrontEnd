@@ -1,6 +1,7 @@
 // actions/login.action.js
 import { redirect } from "react-router-dom";
 import { loginUser } from "/src/services/api";
+import { getCurrentUser } from "../services/api";
 
 export default async function loginAction({ request }) {
   // 1. On extrait les données du formulaire envoyé par le composant <Form>
@@ -18,6 +19,14 @@ export default async function loginAction({ request }) {
   try {
     // 3. Appel au service API (NestJS)
     await loginUser(creds)
+
+    //Ont recupere l'utilisateur pour verifier son role
+    const user = await getCurrentUser()
+
+    //Si c'est un admin ou (permLvl >= 2), redirige vers gestion adoptions
+    if(user.permLvl >= 2) {
+      return redirect("/admin/adoptions")
+    }
     
     // 4. Succès : On redirige l'utilisateur vers sa destination
     return redirect("/user")
