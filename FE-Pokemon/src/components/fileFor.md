@@ -1,1 +1,0 @@
-# Ce dossier est pour mettre les composants des pages
