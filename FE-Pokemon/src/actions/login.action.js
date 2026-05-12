@@ -34,8 +34,8 @@ export default async function loginAction({ request }) {
     // 5. Échec : On "return" un message d'erreur au lieu de le "throw"
     // Ce message sera récupéré par le composant via useActionData()
     if (error.status === 404 || error.status === 400) {
-      return "Email or password is incorrect. Please try again."
+      return "Courriel ou mot de passe est incorrect. Veuillez réessayer."
     }
-    return "Login failed. Please try again."
+    return "La connexion a échouée. Veuillez réessayer."
   }
 };
