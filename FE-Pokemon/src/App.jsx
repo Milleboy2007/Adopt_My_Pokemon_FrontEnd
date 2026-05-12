@@ -31,6 +31,9 @@ import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
 import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
 import PokemonDetail from './components/catalogue/details/PokemonDetail';
 import pokeDetailLoader from './loaders/poke-detail.loader';
+import CreatePokemon from './pages/CreatePokemon'
+import AdminLayout from './layouts/AdminLayout/AdminLayout';
+import adminAuthLoader from './loaders/admin-auth.loader';
 
 
 export default function App() {
@@ -58,8 +61,9 @@ export default function App() {
           <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
         </Route>
 
-        <Route path="/admin">
+        <Route path="/admin" element={<AdminLayout/>} loader={adminAuthLoader}>
           <Route index element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
+          <Route path="createPoke" element={<CreatePokemon />}/>
         </Route>
       </Route>
   ))

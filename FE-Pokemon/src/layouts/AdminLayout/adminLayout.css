@@ -1,0 +1,47 @@
+.admin-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header-admin {
+  width: 100%;
+  background-color: #f4f6ff;
+  border: 1px solid #dbe2ff;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-admin {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-admin a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b449b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 4px 8px;
+}
+
+.nav-admin a:hover {
+  color: #1a53ff;
+}
+
+.nav-admin a.active {
+  font-weight: 700;
+  color: #1a53ff;
+  border-bottom: 2px solid #1a53ff;
+}
+
+.admin-area {
+  width: 100%;
+}
