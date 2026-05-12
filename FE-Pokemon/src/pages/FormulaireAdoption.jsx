@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { createFormulaire, createAdoption } from "../services/api";
 import "./FormulaireAdoption.css";
+import Prix from "../components/catalogue/filtre/Prix";
 
 function FormulaireAdoption() {
   const pokemon = useLoaderData()
@@ -32,7 +33,7 @@ function FormulaireAdoption() {
             aDejaEuPokemon: aDejaEuPokemon === "Oui",
             autresAnimauxMaison,
             gestionAdaptationPokemon,
-            typePokemonSouhaite: pokemon.type
+            typePokemonSouhaite: pokemon.type,
         })
 
         // etape2: creer adoption
