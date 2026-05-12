@@ -49,10 +49,6 @@ export default function App() {
         <Route path="FAQ" element={<FAQ/>}/>
         <Route path="satisf" element={<SatisfactionForm/>} loader={authLoader}/>
         <Route path="adoption/:id" element={<FormulaireAdoption/>} loader={formAdoptionLoader}/>
-        <Route path="admin/adoptions" element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
-
-        
-
 
         <Route path="/user" element={<ProfileLayout/>}>
           <Route index element={<Compte/>} loader={compteLoader}/>
@@ -60,6 +56,10 @@ export default function App() {
           <Route path="modifPass" element={<ModifPass/>} action={modifPassAction}/>
           <Route path="quiz" element={<Quiz/>} loader={quizzesLoader}/>
           <Route path="quiz/:id" element={<QuizDetail/>} loader={quizLoader}/>
+        </Route>
+
+        <Route path="/admin">
+          <Route index element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
         </Route>
       </Route>
   ))

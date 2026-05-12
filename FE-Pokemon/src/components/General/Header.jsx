@@ -18,7 +18,7 @@ function Header({user}){
             </li>
             
             <li>
-                <Link to={user ? "/user" : "/login"}>{user ? "Mon compte" : "Se connecter"}</Link>
+                <Link to={user ? user.permLvl >= 2 ? "/admin": "/user" : "/login"}>{user ? user.permLvl >= 2 ? "Gestionnaire": "Mon compte" : "Se connecter"}</Link>
             </li>
             {
                 user &&
