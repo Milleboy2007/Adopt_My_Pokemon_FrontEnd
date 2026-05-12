@@ -29,7 +29,7 @@ export default async function loginAction({ request }) {
     }
     
     // 4. Succès : On redirige l'utilisateur vers sa destination
-    return redirect("/user")
+    return redirect(pathname)
   } catch (error) {
     // 5. Échec : On "return" un message d'erreur au lieu de le "throw"
     // Ce message sera récupéré par le composant via useActionData()
