@@ -25,7 +25,7 @@ export default async function loginAction({ request }) {
 
     //Si c'est un admin ou (permLvl >= 2), redirige vers gestion adoptions
     if(user.permLvl >= 2) {
-      return redirect("/admin/adoptions")
+      return redirect("/admin")
     }
     
     // 4. Succès : On redirige l'utilisateur vers sa destination
