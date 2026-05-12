@@ -34,6 +34,7 @@ import pokeDetailLoader from './loaders/poke-detail.loader';
 import CreatePokemon from './pages/CreatePokemon'
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import adminAuthLoader from './loaders/admin-auth.loader';
+import CreateQuiz from './pages/CreateQuiz';
 
 
 export default function App() {
@@ -64,6 +65,7 @@ export default function App() {
         <Route path="/admin" element={<AdminLayout/>} loader={adminAuthLoader}>
           <Route index element={<GestionAdoptionAdmin/>} loader={gestionAdoptionLoader}/>
           <Route path="createPoke" element={<CreatePokemon />}/>
+          <Route path="createQuiz" element={<CreateQuiz />}/>
         </Route>
       </Route>
   ))

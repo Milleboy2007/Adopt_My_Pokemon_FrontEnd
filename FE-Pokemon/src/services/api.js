@@ -121,6 +121,14 @@ export async function createPokemon(p) {
   })
 }
 
+export async function createQuiz(q) {
+  return await request("/quiz/create", {
+    method: "POST",
+    body: JSON.stringify(q)
+  }) 
+
+}
+
 export async function satisfactionForm(s) {
   return await request("/satisfaction-form/createFormSatisfaction", {
     method: "POST",

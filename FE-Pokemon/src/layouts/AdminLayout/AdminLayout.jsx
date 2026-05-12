@@ -23,6 +23,13 @@ export default function AdminLayout() {
           >
             Créer un Pokémon
           </NavLink>
+
+          <NavLink
+           to="/admin/createQuiz"
+           className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+                Creer un Quiz
+          </NavLink>
         </nav>
       </header>
 
