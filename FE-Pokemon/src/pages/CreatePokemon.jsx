@@ -4,9 +4,24 @@ import { createPokemon } from '../services/api';
 import './createPokemon.css';
 
 const TYPES = [
-  'normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting',
-  'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost',
-  'dragon', 'dark', 'steel', 'fairy'
+  'normal',
+  'fire',
+  'water',
+  'grass',
+  'electric',
+  'ice',
+  'fighting',
+  'poison',
+  'ground',
+  'flying',
+  'psychic',
+  'bug',
+  'rock',
+  'ghost',
+  'dragon',
+  'dark',
+  'steel',
+  'fairy'
 ];
 
 export default function CreatePokemon() {
@@ -28,7 +43,7 @@ export default function CreatePokemon() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
 
-  const handleChange = (e) => {
+  function handleChange(e){
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -36,7 +51,7 @@ export default function CreatePokemon() {
     }));
   };
 
-  const handleFileChange = (e) => {
+  function handleFileChange(e){
     const file = e.target.files[0];
     if (!file) return;
 
@@ -63,13 +78,13 @@ export default function CreatePokemon() {
     reader.readAsDataURL(file);
   };
 
-  const handleModeSwitch = (mode) => {
+  function handleModeSwitch(mode){
     setImageMode(mode);
     setFileName('');
     setFormData(prev => ({ ...prev, img: '' }));
   };
 
-  const handleTypeToggle = (typeStr) => {
+  function handleTypeToggle(typeStr){
     setFormData(prev => {
       const exists = prev.type.includes(typeStr);
       if (exists) {
@@ -80,7 +95,7 @@ export default function CreatePokemon() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e){
     e.preventDefault();
     setMessage({ type: '', text: '' });
 

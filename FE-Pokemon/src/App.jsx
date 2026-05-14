@@ -1,40 +1,49 @@
-import './App.css'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+
+// ---- Page ----
 import LogIn from './pages/LogIn'
 import SignIn from './pages/SignIn'
 import Accueil from './pages/Accueil'
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import Compte from './pages/Compte'
 import Catalogue from './pages/Catalogue'
 import MyPokemon from './pages/MyPokemon'
-import Quiz from './components/Quiz/Quiz';
-import MainLayout from './layouts/MainLayout/MainLayout'
-import ProfileLayout from './layouts/ProfileLayout/ProfileLayout'
-import {pokemonsLoader, myPokemonLoader} from './loaders/pokemons.loader';
-import loginAction from './actions/login.action';
-import loginLoader from './loaders/login.loader';
-import logoutAction from './actions/logout.action';
-import mainLayoutLoader from './loaders/main-layout.loader';
-import compteLoader from './loaders/compte.loader';
-import authLoader from './loaders/auth.loader';
-import QuizDetail from './components/Quiz/Details/QuizDetail'
-import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
 import AboutUs from './pages/AboutUs';
 import OurTeam from './pages/OurTeam';
 import FAQ from './pages/FAQ';
 import SatisfactionForm from './pages/satisfactionForm';
-import signinAction from './actions/signin.action';
 import FormulaireAdoption from './pages/FormulaireAdoption';
-import { formAdoptionLoader } from './loaders/form-adoption.loader';
 import ModifPass from './pages/modifPass';
-import modifPassAction from './actions/modifPass.action';
-import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
-import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
-import PokemonDetail from './components/catalogue/details/PokemonDetail';
-import pokeDetailLoader from './loaders/poke-detail.loader';
 import CreatePokemon from './pages/CreatePokemon'
-import AdminLayout from './layouts/AdminLayout/AdminLayout';
-import adminAuthLoader from './loaders/admin-auth.loader';
 import CreateQuiz from './pages/CreateQuiz';
+import GestionAdoptionAdmin from './pages/GestionAdoptionAdmin';
+
+// ---- Components ----
+import Quiz from './components/Quiz/Quiz';
+import QuizDetail from './components/Quiz/Details/QuizDetail'
+import PokemonDetail from './components/catalogue/details/PokemonDetail';
+
+// ---- Layouts ----
+import MainLayout from './layouts/MainLayout/MainLayout'
+import ProfileLayout from './layouts/ProfileLayout/ProfileLayout'
+import AdminLayout from './layouts/AdminLayout/AdminLayout';
+
+// ---- Loader ----
+import {pokemonsLoader, myPokemonLoader} from './loaders/pokemons.loader';
+import loginLoader from './loaders/login.loader';
+import mainLayoutLoader from './loaders/main-layout.loader';
+import compteLoader from './loaders/compte.loader';
+import authLoader from './loaders/auth.loader';
+import { quizzesLoader, quizLoader } from "./loaders/quiz.loader"
+import { formAdoptionLoader } from './loaders/form-adoption.loader';
+import gestionAdoptionLoader from './loaders/gestion-adoption.loader';
+import pokeDetailLoader from './loaders/poke-detail.loader';
+import adminAuthLoader from './loaders/admin-auth.loader';
+
+// ---- Action ----
+import loginAction from './actions/login.action';
+import logoutAction from './actions/logout.action';
+import signinAction from './actions/signin.action';
+import modifPassAction from './actions/modifPass.action';
 
 
 export default function App() {

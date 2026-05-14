@@ -40,7 +40,7 @@ input:focus {
 button[type="submit"] {
     width: 100%;
     padding: 12px;
-    background-color: #ffcb05; /* Pokémon yellow */
+    background-color: #ffcb05;
     border: none;
     border-radius: 6px;
     font-size: 1rem;

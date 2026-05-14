@@ -1,4 +1,3 @@
-import "./modifPass.css"
 import { Form, useOutletContext } from "react-router-dom";
 
 

@@ -18,7 +18,7 @@ export default function CreateQuiz() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
 
-  const handleChange = (e) => {
+  function handleChange(e){
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -26,14 +26,14 @@ export default function CreateQuiz() {
     }));
   };
 
-  const handleDifficulteSelect = (diffStr) => {
+  function handleDifficulteSelect(diffStr){
     setFormData(prev => ({
       ...prev,
       difficulte: diffStr
     }));
   };
 
-  const handleReset = () => {
+  function handleReset(){
     setFormData({
       titre: '',
       difficulte: '',
@@ -43,7 +43,7 @@ export default function CreateQuiz() {
     setMessage({ type: '', text: '' });
   };
 
-  const handleSubmit = async (e) => {
+  async function handleSubmit(e){
     e.preventDefault();
     setMessage({ type: '', text: '' });
 

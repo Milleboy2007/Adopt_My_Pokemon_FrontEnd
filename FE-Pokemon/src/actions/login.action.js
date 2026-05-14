@@ -23,7 +23,7 @@ export default async function loginAction({ request }) {
     //Ont recupere l'utilisateur pour verifier son role
     const user = await getCurrentUser()
 
-    //Si c'est un admin ou (permLvl >= 2), redirige vers gestion adoptions
+    //Si c'est un admin ou (permLvl >= 2), redirige vers le dashboard admin
     if(user.permLvl >= 2) {
       return redirect("/admin")
     }
@@ -31,8 +31,7 @@ export default async function loginAction({ request }) {
     // 4. Succès : On redirige l'utilisateur vers sa destination
     return redirect(pathname)
   } catch (error) {
-    // 5. Échec : On "return" un message d'erreur au lieu de le "throw"
-    // Ce message sera récupéré par le composant via useActionData()
+    // 5. Échec : On "return" un message d'erreur
     if (error.status === 404 || error.status === 400) {
       return "Courriel ou mot de passe est incorrect. Veuillez réessayer."
     }

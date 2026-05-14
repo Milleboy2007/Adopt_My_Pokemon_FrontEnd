@@ -36,7 +36,7 @@
     color: #1a53ff;
 }
 
-/* Active/selected feeling (optional if you use NavLink later) */
+/* Active/selected feeling */
 .navbar2 a.active {
     background-color: #1a53ff;
     color: white;

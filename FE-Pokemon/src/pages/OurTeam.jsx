@@ -4,6 +4,7 @@ import diego from '../assets/diego.jpg'
 import kyra from '../assets/kyra.jpg'
 import nathan from '../assets/nathan.jpg'
 import angel from '../assets/angel.jpg'
+
 function OurTeam() {
   return (
     <div className="our-team">

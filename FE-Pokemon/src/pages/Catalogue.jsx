@@ -70,11 +70,13 @@ function Catalogue() {
     "<=": (a, b) => a <= b,
     "==": (a, b) => a === b
   }
+
   const pokeFiltrer = pokeTrieList.filter(poke => poke.nom.toLowerCase().includes(nom.toLowerCase())
                           && type.every(t => poke.type.includes(t))
                           && param[poids.param](poke.poids, poids.value)
                           && param[taille.param](poke.grandeur, taille.value)
                           && param[prix.param](poke.prix, prix.value))
+                          
   let listFinal = pokeFiltrer
 
   return (

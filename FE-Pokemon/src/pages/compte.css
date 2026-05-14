@@ -119,7 +119,6 @@
     cursor: pointer;
 }
 
-/* Optional link alignment fix */
 .account-card a {
     display: flex;
     align-items: center;

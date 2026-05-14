@@ -23,12 +23,11 @@
   text-align: justify;
 }
 
-/* Optional: subtle separation from header/footer */
 .about-us::before {
   content: "";
   display: block;
   width: 80px;
   height: 3px;
-  background-color: #ff3b3b; /* accent color */
+  background-color: #ff3b3b;
   margin-bottom: 24px;
 }

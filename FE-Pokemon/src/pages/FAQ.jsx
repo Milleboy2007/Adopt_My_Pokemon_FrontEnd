@@ -1,4 +1,5 @@
 import './FAQ.css'
+
 function FAQ() {
   return (
     <div className="faq">

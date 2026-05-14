@@ -1,5 +1,4 @@
 import { Outlet, useOutletContext } from 'react-router-dom'
-import './ProfileLayout.css'
 import HeaderUser from '../../components/General/HeaderUser'
 import Footer from '../../components/General/Footer'
 
